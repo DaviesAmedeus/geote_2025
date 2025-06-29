@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>GeoTE</title>
+  <title>GeoTE_2025</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -33,7 +33,6 @@
   <link href="{{ url('assets/css/main.css') }}" rel="stylesheet">
 
   <script src="//unpkg.com/alpinejs" defer></script>
- @livewireStyles
 
 </head>
 
@@ -97,7 +96,7 @@
                 <ul>
                   <li><a href="{{route('home')}}">Home</a></li>
                   <li><a href="{{route('about')}}">About</a></li>
-                  <li><a href="{{route('engagements')}}">Engagements</a></li>
+                  <li><a href="{{route('projects')}}">Engagements</a></li>
                   {{-- <li><a href="{{route('projects.index')}}">Projects</a></li>
                   <li><a href="{{route('blog.index')}}">Blog</a></li> --}}
                     <li><a href="#">Publications</a></li>
@@ -149,7 +148,6 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
-    @livewireScripts
 </body>
 
 </html>

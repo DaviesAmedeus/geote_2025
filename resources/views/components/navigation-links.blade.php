@@ -2,7 +2,8 @@
     <ul>
          <li><a href="{{ route('home') }}">Home</a></li>
        <li><a href="{{ route('about') }}">About</a></li>
-       <li><a href="{{ route('engagements') }}">Engagements</a></li>
+       <li><a href="{{ route('projects') }}">Projects</a></li>
+       <li><a href="#">Gallery</a></li>
        {{-- <li><a href="{{ route('projects.index') }}">Projects</a></li> --}}
         <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
              <ul>

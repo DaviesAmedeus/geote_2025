@@ -1,19 +1,38 @@
 <?php
 
-use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\RegisteredUserController;
 
-Route::controller(WebsiteController::class)->group(function(){
-    Route::get('/',  'index')->name('home');
-    Route::get('/about','about')->name('about');
-    Route::get('/engagements',  'engagements')->name('engagements');
-
-    Route::get('/mapathons',  'mapathons')->name('mapathons');
-    Route::get('/geospark',  'geospark')->name('geospark');
-    Route::get('/fpt',  'fpt')->name('fpt');
-    Route::get('/shortcourses',  'shortcourses')->name('shortcourses');
-    Route::get('/mentorship',  'mentorship')->name('mentorship');
-
+// Returns views of static pages on the website
+Route::view('/',  'website.index')->name('home');
+Route::view('/about', 'website.about')->name('about');
+// Route::view('/projects',  'website.projects')->name('projects');
+Route::view('/mapathons',  'website.mapathons')->name('mapathons');
+Route::view('/geospark',  'website.geospark')->name('geospark');
+Route::view('/fpt',  'website.fpt')->name('fpt');
+Route::view('/shortcourses',  'website.shortcourses')->name('shortcourses');
+Route::view('/mentorship',  'website.mentorship')->name('mentorship');
 
 
+Route::controller(ProjectController::class)->group(function () {
+    Route::get('/projects', 'index')->name('projects');
+    Route::get('/projects/show', 'show')->name('projects.show');
 });
+
+
+// Auth
+Route::middleware('guest')->group(function () {
+    Route::get('/register', [RegisteredUserController::class, 'create']);
+    Route::post('/register', [RegisteredUserController::class, 'store']);
+
+    Route::get('/login', [SessionController::class, 'create'])->name('login');
+    Route::post('/login', [SessionController::class, 'store']);
+});
+
+Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+require __DIR__.'/admin.php';
+require __DIR__.'/staff.php';
+
