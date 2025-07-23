@@ -3,14 +3,14 @@
          <li><a href="{{ route('home') }}">Home</a></li>
        <li><a href="{{ route('about') }}">About</a></li>
        <li><a href="{{ route('projects') }}">Projects</a></li>
-       <li><a href="#">Gallery</a></li>
-       {{-- <li><a href="{{ route('projects.index') }}">Projects</a></li> --}}
-        <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+         <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
              <ul>
                {{-- <li><a href="{{ route('blog.index') }}">Blog</a></li> --}}
                {{-- <li><a href="{{ route('publications') }}">Publications</a></li> --}}
              </ul>
         </li>
+       <li><a href="#">Gallery</a></li>
+
          <li class="dropdown"><a href="#"><span>Events</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
              <ul>
                <li><a href="{{ route('geospark') }}">Geo_spark</a></li>
@@ -34,13 +34,8 @@
        </li>
         @endif
 
-        @if (optional(Auth::user())->is_admin===0)
-        <li class="dropdown"><a href="#"><span>LOGGED IN</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="/staff">Dashboard</a></li>
-          </li>
-            </ul>
-       </li>
-        @endif
+         <li><a class="btn btn-lg btn-outline-success px-3 py-2" href="#">Donate</a></li>
+
+
      </ul>
  </nav>

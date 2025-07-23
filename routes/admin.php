@@ -28,8 +28,13 @@ Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(fun
             Route::get('/projects/create', 'create');
             Route::post('/projects/create', 'store');
             Route::get('/projects/{project}/show', 'show');
+                        Route::delete('/projects/{project}/destroy', 'destroy')->withTrashed();; //Soft deletes (for trashed projects)
+
             Route::get('/projects/{project}/edit', 'edit');
             Route::patch('/projects/{project}/update', 'update');
-            Route::delete('/projects/{project}/destroy', 'destroy');
+            Route::delete('/projects/{project}/trash', 'trash'); //Soft deletes (for trashed projects)
+            Route::get('/projects/trashed', 'trashed');
+           Route::patch('/projects/{project}/restore', 'restore')->withTrashed(); //Restore trashed projects
+
         });
 });

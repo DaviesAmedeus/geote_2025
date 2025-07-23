@@ -10,18 +10,9 @@
             </div>
         </div>
 
-        @if (session('error'))
-            <div class="alert alert-warning text-center mb-4 rounded-0">
-                <strong> {{ session('error') }}</strong>
-            </div>
-        @endif
 
 
-          @if (session('success'))
-            <div class="alert alert-success text-center mb-4 rounded-0">
-                <strong> {{ session('success') }}</strong>
-            </div>
-        @endif
+        <x-panel.alerts />
 
         <div class="row">
             <form action="/super-admin/projects/{{ $project->id }}/update" method="post" class="col-xl-12" enctype="multipart/form-data">
@@ -46,6 +37,18 @@
                                             placeholder="Eg: Mapping for Pangolin"
                                             value="{{ old('title', $project->title) }}" name="title">
                                         @error('title')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                 <div class="for-row">
+                                    <div class="form-group">
+                                        <label for="name">Project Subtitle<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="title"
+                                            placeholder="Eg: A case study of..." value="{{ old('subtitle', $project->subtitle) }}"
+                                            name="subtitle">
+                                        @error('subtitle')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -156,6 +159,26 @@
                                         </div>
                                         <button type="button" id="add-achievement"
                                             class="btn btn-sm btn-outline-primary">Add Another</button>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlSelect1">Project published Report link</label>
+                                         <input type="text" class="form-control" id="title"
+                                            placeholder="Eg: https://docs.google.com/...project.pdf" value="{{ old('pdf_link', $project->pdf_link) }}"
+                                            name="pdf_link">
+                                        @error('pdf_link')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlSelect1">Project image directory</label>
+                                         <input type="text" class="form-control" id="other_imgs"
+                                            placeholder="Eg: https://drive.google.com/drive/....folder" value="{{ old('other_imgs', $project->other_imgs) }}
+                                            name="other_imgs">
+                                        @error('category')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 

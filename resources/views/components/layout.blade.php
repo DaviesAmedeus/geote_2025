@@ -30,6 +30,7 @@
 
 
   <!-- Template Main CSS File -->
+  @stack('styles')
   <link href="{{ url('assets/css/main.css') }}" rel="stylesheet">
 
   <script src="//unpkg.com/alpinejs" defer></script>

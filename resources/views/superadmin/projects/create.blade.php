@@ -10,11 +10,8 @@
             </div>
         </div>
 
-        @if (session('error'))
-            <div class="alert alert-warning text-center mb-4 rounded-0">
-                <strong> {{ session('error') }}</strong>
-            </div>
-        @endif
+        <x-panel.alerts />
+
 
         <div class="row">
             <form action="/super-admin/projects/create" method="post" class="col-xl-12" enctype="multipart/form-data">
@@ -38,6 +35,18 @@
                                             placeholder="Eg: Mapping for Pangolin" value="{{ old('title') }}"
                                             name="title">
                                         @error('title')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                  <div class="for-row">
+                                    <div class="form-group">
+                                        <label for="name">Project Subtitle<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="title"
+                                            placeholder="Eg: A case study of..." value="{{ old('subtitle') }}"
+                                            name="subtitle">
+                                        @error('subtitle')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -107,12 +116,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    {{-- <label for="exampleFormControlTextarea1">Project Achievement</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="(Comma separated) Eg: Mapped seven regions, Used drone technology, Collaborated with the locals etc"
-                                        rows="4" name="achievements">{{ old('achievements') }}</textarea>
-                                    @error('achievements')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror --}}
+
 
                                     <div class="mb-3">
                                         <label class="form-label">Achievements</label>
@@ -128,6 +132,26 @@
                                             class="btn btn-sm btn-outline-primary">Add Another</button>
                                     </div>
                                 </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlSelect1">Project published Report link</label>
+                                         <input type="text" class="form-control" id="title"
+                                            placeholder="Eg: https://docs.google.com/...project.pdf" value="{{ old('pdf_link') }}"
+                                            name="pdf_link">
+                                        @error('pdf_link')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlSelect1">Project image directory</label>
+                                         <input type="text" class="form-control" id="other_imgs"
+                                            placeholder="Eg: https://drive.google.com/drive/....folder" value="{{ old('other_imgs') }}"
+                                            name="other_imgs">
+                                        @error('category')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
 
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
@@ -139,7 +163,7 @@
                                             <option value="pending">Pending</option>
                                             <option value="ongoing">Ongoing</option>
                                         </select>
-                                        @error('ststus')
+                                        @error('status')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -167,7 +191,7 @@
                     </div>
 
                     <div class="mt-3 col-6 mx-auto">
-                        <button type="submit" class="btn btn-outline-primary btn-lg btn-block mb-1">Create
+                        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block mb-1">Create
                             Project</button>
                     </div>
                 </div>

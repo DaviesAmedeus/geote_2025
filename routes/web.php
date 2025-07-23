@@ -8,7 +8,6 @@ use App\Http\Controllers\RegisteredUserController;
 // Returns views of static pages on the website
 Route::view('/',  'website.index')->name('home');
 Route::view('/about', 'website.about')->name('about');
-// Route::view('/projects',  'website.projects')->name('projects');
 Route::view('/mapathons',  'website.mapathons')->name('mapathons');
 Route::view('/geospark',  'website.geospark')->name('geospark');
 Route::view('/fpt',  'website.fpt')->name('fpt');
@@ -18,7 +17,7 @@ Route::view('/mentorship',  'website.mentorship')->name('mentorship');
 
 Route::controller(ProjectController::class)->group(function () {
     Route::get('/projects', 'index')->name('projects');
-    Route::get('/projects/show', 'show')->name('projects.show');
+    Route::get('/projects/{project}/show', 'show')->name('projects.show');
 });
 
 
@@ -33,6 +32,11 @@ Route::middleware('guest')->group(function () {
 
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 
+
+
 require __DIR__.'/admin.php';
 require __DIR__.'/staff.php';
+
+// fallback
+Route::fallback(fn() => view('website.about'));
 

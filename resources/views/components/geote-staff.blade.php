@@ -47,7 +47,7 @@
 
 
         <x-team-member
-        imglink='assets/img/geote-team/staff/anna.png'
+        imglink='assets/img/geote-team/staff/Anna.webp'
         position='Membership Coordinator'
         memberName='Anna K Mzeru'
         />

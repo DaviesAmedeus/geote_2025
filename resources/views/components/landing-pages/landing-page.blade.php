@@ -86,7 +86,7 @@
     </section><!-- End Hero Section -->
 @elseif ($geospark)
     <div {{ $attributes->merge(['class' => 'breadcrumbs d-flex align-items-center']) }}>
-        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+        <div class="container position-relative d-flex flex-column align-items-center " data-aos="fade">
 
             {{ $slot }}
         </div>
