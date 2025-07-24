@@ -7,8 +7,11 @@
 
             <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
 
-                <x-partner imglink='assets/img/partners/mapbox.png' />
-                <x-partner imglink='assets/img/partners/mapbox.png' />
+  <x-partner imglink='assets/img/partners/sua.png' title="Sokoine University (SUA)" />
+                <x-partner imglink='assets/img/partners/ym.jpeg'  title='Youth Mappers'/>
+                 <x-partner imglink='assets/img/partners/tomtom2.png'  title='TomTom' />
+                 <x-partner imglink='assets/img/partners/omdtzlogo.png' title='OMDTZ' />
+                 <x-partner imglink='assets/img/partners/mapbox.png'  title='Mapbox'/>
 
 
 
