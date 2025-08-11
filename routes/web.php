@@ -13,6 +13,8 @@ Route::view('/geospark',  'website.geospark')->name('geospark');
 Route::view('/fpt',  'website.fpt')->name('fpt');
 Route::view('/shortcourses',  'website.shortcourses')->name('shortcourses');
 Route::view('/mentorship',  'website.mentorship')->name('mentorship');
+Route::view('/donate',  'website.donate')->name('donate');
+
 
 
 Route::controller(ProjectController::class)->group(function () {
