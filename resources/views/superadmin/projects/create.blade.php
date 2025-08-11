@@ -97,7 +97,7 @@
                                                 accept="image/*">
 
                                             <small class="form-text text-muted d-block">
-                                                Recommended size: 1200x1200 pixels (square). Max file size: 2MB.
+                                                Recommended size: 1080x500 pixels (Rectangle). Max file size: 2MB.
                                             </small>
                                             @error('image')
                                                 <div class="text-danger">{{ $message }}</div>
