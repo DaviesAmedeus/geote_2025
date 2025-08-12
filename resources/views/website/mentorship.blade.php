@@ -64,24 +64,13 @@
 
             <!-- Mentee Testimonials Slider -->
             <div class="slider-container">
+
                 <div class="slider" id="slider">
-                    <div class="slide">
-                        <div class="testimonial">
-                            <div class="testimonial-item text-center p-4 shadow-sm"
-                                style="max-width: 350px; border-radius: 15px; background: #f4f4f4;">
-                                <img src="{{ asset('assets/img/geote-team/staff/Anna.webp') }}"
-                                    class="testimonial-img rounded-circle mb-3" alt="Erick Tamba Mnyali"
-                                    style="width: 120px; height: 120px; object-fit: cover;">
-                                <h3 class="mt-2">Erick Tamba Mnyali</h3>
-                                <p class="fst-italic" style="font-size: 0.95rem;">
-                                    <i class="bi bi-quote quote-icon-left"></i>
-                                    GeoTE's mentorship gave me the skills, confidence, and network to take my career to
-                                    the next level.
-                                    <i class="bi bi-quote quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+
+                    <x-mentee
+                    imglink="assets/img/geote-team/staff/Anna.webp"
+                    name="Anna K Mzeru"
+                    testimonial="GeoTE's mentorship gave me the skills, confidence, and network to take my career to the next level."  />
 
 
 
