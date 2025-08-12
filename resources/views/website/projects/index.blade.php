@@ -44,7 +44,7 @@
                                                 <i class="fas fa-map-marked-alt me-1"></i> GeoTE
                                             </span>
                                             <small
-                                                class="text-muted">{{ $project->created_at->format('M d, Y') }}</small>
+                                                class="text-muted">{{ $project->start_date->format('M d, Y') }}</small>
                                         </div>
 
                                         <!-- Project Title -->

@@ -2,89 +2,105 @@
 
     <!-- Landing section -->
     <x-slot:landing_section>
-      <x-landing-pages.landing-page
-        style="background-image: url('{{ asset('assets/img/landingpages_pics/other_pics/other13.jpg') }}');">
-        Mentorship
-      </x-landing-pages.landing-page>
+        <x-landing-pages.landing-page
+            style="background-image: url('{{ asset('assets/img/landingpages_pics/other_pics/other13.jpg') }}');">
+            Mentorship
+        </x-landing-pages.landing-page>
     </x-slot:landing_section>
 
 
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
 
-          <div class="row position-relative">
-            <div class="col-lg-7">
-                <h2></h2>
-                <div class="our-story">
-                  <h3>GIS Mentorship Program</h3>
-                  <p>Through this initiative, we understand the power of mentorship, especially with the hands-on nature and
-                     progressive advancement of the GIS and Remote Sensing discipline. Whether enrolled in an academic
-                     institution, innovating, conducting your research, or employed, we offer great mentors and qualified
-                     GIS experts to support your course for 3 months or more. </p>
+            <div class="row position-relative">
+                <div class="col-lg-7">
+                    <h2></h2>
+                    <div class="our-story">
+                        <h3>GIS Mentorship Program</h3>
+                        <p>Through this initiative, we understand the power of mentorship, especially with the hands-on
+                            nature and
+                            progressive advancement of the GIS and Remote Sensing discipline. Whether enrolled in an
+                            academic
+                            institution, innovating, conducting your research, or employed, we offer great mentors and
+                            qualified
+                            GIS experts to support your course for 1 months or more. </p>
 
-                     <p>
+                        <p>
 
-                        Through one-on-one mentorship, an individual can connect to a mentor for assistance and navigate
-                        through GIS-related proposals, projects, ideation and pitching, and activities. On your flexibility
-                        we are ready to engage with you. </p>
+                            Through one-on-one mentorship, an individual can connect to a mentor for assistance and
+                            navigate
+                            through GIS-related proposals, projects, ideation and pitching, and activities. On your
+                            flexibility
+                            we are ready to engage with you. </p>
 
-                            <div class="watch-video d-flex align-items-center position-relative  me-3">
-                                <i class="bi bi-person"></i>
-                                <a href="https://docs.google.com/forms/d/1fXV92v-qlGLlY6saHdVHkZZZIhWNajXEzAUFJOo4X74/edit" target="_blank">
-                                    Interested to be mentored?</a>
-                              </div>
+                        <div class="watch-video d-flex align-items-center position-relative  me-3">
+                            <i class="bi bi-person"></i>
+                            <a href="https://docs.google.com/forms/d/1fXV92v-qlGLlY6saHdVHkZZZIhWNajXEzAUFJOo4X74/edit"
+                                target="_blank">
+                                Interested to be mentored?</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
 
-            <div class="col-lg-7 about-img" style="background-image: url({{ asset('assets/img/landingpages_pics/other_pics/other12.jpg') }});"></div>
+                <div class="col-lg-7 about-img"
+                    style="background-image: url({{ asset('assets/img/landingpages_pics/other_pics/other12.jpg') }});">
+                </div>
 
-          </div>
+            </div>
 
         </div>
 
-      </section>
+    </section>
 
-       <!-- ======= Our Team Section ======= -->
-       <section id="team" class="team">
+    <!-- ======= Our Team Section ======= -->
+    <section id="team" class="team">
         <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-            <h2>Mentors</h2>
-            <p>Get proffesional guidance and insights</p>
-        </div>
-
-        <div class="row gy-5">
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-            <div class="member-img">
-                <img src="{{ asset('assets/img/geote/geote-team/Ezek.png') }}" class="img-fluid" alt="">
-
+            <div class="section-header">
+                <h2>Mentees Testimonial</h2>
+                <p>Real stories, real growth. Here’s what some of our past mentees have to say about their journey with
+                    GeoTE’s mentorship program.</p>
             </div>
-            <div class="member-info text-center">
-                <h4>Ezekiel Edgar</h4>
-                {{-- <span>Chief Executive Officer</span> --}}
-                {{-- <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p> --}}
-            </div>
-            </div><!-- End Team Member -->
 
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-                <div class="member-img">
-                    <img src="{{ asset('assets/img/geote/geote-team/Erick.png') }}" class="img-fluid" alt="">
+            <!-- Mentee Testimonials Slider -->
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="slide">
+                        <div class="testimonial">
+                            <div class="testimonial-item text-center p-4 shadow-sm"
+                                style="max-width: 350px; border-radius: 15px; background: #f4f4f4;">
+                                <img src="{{ asset('assets/img/geote-team/staff/Anna.webp') }}"
+                                    class="testimonial-img rounded-circle mb-3" alt="Erick Tamba Mnyali"
+                                    style="width: 120px; height: 120px; object-fit: cover;">
+                                <h3 class="mt-2">Erick Tamba Mnyali</h3>
+                                <p class="fst-italic" style="font-size: 0.95rem;">
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    GeoTE's mentorship gave me the skills, confidence, and network to take my career to
+                                    the next level.
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
                 </div>
-                <div class="member-info text-center">
-                    <h4>Erick Tamba Mnyali</h4>
-                    {{-- <span>Chief Executive Officer</span> --}}
-                    {{-- <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p> --}}
+                <div class="controls">
+                    <button class="btn" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="btn" onclick="moveSlide(1)">&#10095;</button>
                 </div>
-                </div><!-- End Team Member -->
-        </div>
+            </div>
+
+
+
 
         </div>
     </section><!-- End Our Team Section -->
 
 
-      {{-- <!-- ======= Testimonials Section ======= -->
+    {{-- <!-- ======= Testimonials Section ======= -->
       <section id="testimonials" class="testimonials section-bg">
         <div class="container" data-aos="fade-up">
 
@@ -192,8 +208,76 @@
 
         </div>
       </section><!-- End Testimonials Section --> --}}
-  </x-layout>
 
 
 
+    @push('styles')
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
 
+            .slider-container {
+                width: 90%;
+                margin: auto;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .slider {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .slide {
+                flex: 0 0 calc(100% / 3);
+                /* 3 items per view */
+                box-sizing: border-box;
+                padding: 10px;
+            }
+
+            .testimonial {
+                background: #f4f4f4;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            .controls {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                transform: translateY(-50%);
+            }
+
+            .btn {
+                background: rgba(0, 0, 0, 0.6);
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+        </style>
+    @endpush
+
+
+
+    @push('scripts')
+        <script>
+            let currentIndex = 0;
+            const slidesToShow = 3;
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            function moveSlide(direction) {
+                const slider = document.getElementById('slider');
+                const maxIndex = Math.ceil(totalSlides / slidesToShow) - 1;
+                currentIndex += direction;
+                if (currentIndex < 0) currentIndex = maxIndex;
+                if (currentIndex > maxIndex) currentIndex = 0;
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        </script>
+    @endpush
+</x-layout>

@@ -34,7 +34,7 @@
        </li>
         @endif
 
-         <li><a class="btn btn-lg btn-outline-success px-3 py-2" href="{{ route('donate') }}">Donate</a></li>
+         <li><a class="btn btn-lg btn-outline-success px-3 py-2" href="/donate">Donate</a></li>
 
 
      </ul>

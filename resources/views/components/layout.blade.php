@@ -139,6 +139,7 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
+  @stack('scripts')
   <script src="{{ url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
   <script src="{{ url('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
