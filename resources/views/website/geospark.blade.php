@@ -3,7 +3,7 @@
      <!-- Landing section -->
      <x-slot:landing_section>
         <x-landing-pages.landing-page
-          style="background-image: url('{{ asset('assets/img/landingpages_pics/fptpage.jpg') }}');"
+          style="background-image: url('{{ asset('assets/img/landingpages_pics/geosparklanding.png') }}');"
           :geospark="request()->is('/geospark')"
           >
          <h2> <strong>GEO<span class="text-warning">_</span>SPARK</strong></h2>
@@ -17,7 +17,7 @@
 
         <div class="row position-relative">
 
-          <div class="col-lg-7 about-img" style="background-image: url({{ asset('assets/img/landingpages_pics/other_pics/other1.jpg') }});"></div>
+          <div class="col-lg-7 about-img" style="background-image: url({{ asset('assets/img/website/geosparkpanel.webp') }});"></div>
 
           <div class="col-lg-7">
             <h2>Our year to Map, Innovate & Impact</h2>
@@ -45,7 +45,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="row justify-content-around gy-4">
-        <div class="col-lg-6 img-bg" style="background-image: url({{ asset('assets/img/landingpages_pics/other_pics/other5.jpg') }});" data-aos="zoom-in" data-aos-delay="100"></div>
+        <div class="col-lg-6 img-bg" style="background-image: url({{ asset('assets/img/website/simonGeospark.webp') }});" data-aos="zoom-in" data-aos-delay="100"></div>
 
         <div class="col-lg-5 d-flex flex-column justify-content-center">
 
@@ -80,7 +80,7 @@
 
 
 
-      <div class="col-lg-7">
+      {{-- <div class="col-lg-7">
         <div class="our-story">
           <h3>Special Announcements</h3>
 
@@ -93,7 +93,7 @@
           </ul>
 
         </div>
-      </div>
+      </div> --}}
 
     </div>
 </div>

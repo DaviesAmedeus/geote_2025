@@ -160,10 +160,16 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item d-flex align-items-center w-100 h-100">
-                        <i class="bi bi-tools  color-blue flex-shrink-0"></i>
+                        <i class="bi bi-folder"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1"
-                                class="purecounter"></span>
+                            <span class="counter-plus">
+<span style="display: inline-flex; align-items: center;">
+  <span data-purecounter-start="0"
+        data-purecounter-end="7"
+        data-purecounter-duration="1"
+        class="purecounter"></span>
+  <span style="margin-left: 2px;">+</span>
+</span>
                             <p>Projects</p>
                         </div>
                     </div>
@@ -171,10 +177,14 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item d-flex align-items-center w-100 h-100">
-                        <i class="bi bi-person color-orange flex-shrink-0"></i>
-                        <div>
-                            <span data-purecounter-start="0" data-purecounter-end="850" data-purecounter-duration="1"
-                                class="purecounter">+</span>
+<i class="bi bi-person-workspace"></i>                        <div>
+                            <span style="display: inline-flex; align-items: center;">
+  <span data-purecounter-start="0"
+        data-purecounter-end="2500"
+        data-purecounter-duration="1"
+        class="purecounter"></span>
+  <span style="margin-left: 2px;">+</span>
+</span>
                             <p>Trainees</p>
                         </div>
                     </div>
@@ -182,10 +192,15 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item d-flex align-items-center w-100 h-100">
-                        <i class="bi bi-clipboard-data color-green flex-shrink-0"></i>
+                        <i class="bi bi-easel"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
-                                class="purecounter"></span>
+                           <span style="display: inline-flex; align-items: center;">
+  <span data-purecounter-start="0"
+        data-purecounter-end="25"
+        data-purecounter-duration="1"
+        class="purecounter"></span>
+  <span style="margin-left: 2px;">+</span>
+</span>
                             <p>Workshops</p>
                         </div>
                     </div>
@@ -193,10 +208,15 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="stats-item d-flex align-items-center w-100 h-100">
-                        <i class="bi bi-journals color-pink flex-shrink-0"></i>
+                        <i class="bi bi-journals"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1"
-                                class="purecounter"></span>
+                            <span style="display: inline-flex; align-items: center;">
+  <span data-purecounter-start="0"
+        data-purecounter-end="5"
+        data-purecounter-duration="1"
+        class="purecounter"></span>
+  <span style="margin-left: 2px;">+</span>
+</span>
                             <p>Publications</p>
                         </div>
                     </div>

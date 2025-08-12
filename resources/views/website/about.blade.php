@@ -14,7 +14,7 @@
 
             <div class="row justify-content-around gy-4">
                 <div class="col-lg-6 img-bg"
-                    style="background-image: url({{ asset('assets/img/landingpages_pics/fullteam.JPG') }});"
+                    style="background-image: url({{ asset('assets/img/website/geoteteam.webp') }});"
                     data-aos="zoom-in" data-aos-delay="100"></div>
 
                 <div class="col-lg-5 d-flex flex-column justify-content-center">

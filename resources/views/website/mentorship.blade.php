@@ -72,9 +72,6 @@
                     name="Anna K Mzeru"
                     testimonial="GeoTE's mentorship gave me the skills, confidence, and network to take my career to the next level."  />
 
-
-
-
                 </div>
                 <div class="controls">
                     <button class="btn" onclick="moveSlide(-1)">&#10094;</button>

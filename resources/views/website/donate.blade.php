@@ -46,7 +46,7 @@ It directly supports GeoTE’s mission to make the world a better place through 
           </div>
 
 
-          <div class="col-lg-6 img-bg" style="background-image: url({{ asset('assets/img/website/tttt.png') }});" data-aos="zoom-in" data-aos-delay="100"></div>
+          <div class="col-lg-6 img-bg" style="background-image: url({{ asset('assets/img/website/helpusgrow3.jpeg') }});" data-aos="zoom-in" data-aos-delay="100"></div>
         </div>
 
       </div>
