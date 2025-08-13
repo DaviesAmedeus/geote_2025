@@ -22,7 +22,8 @@ It directly supports GeoTE’s mission to make the world a better place through 
             <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
            <i class="bi bi-bank flex-shrink-0" aria-hidden="true"></i>
               <div>
-                <h4><a href="#" class="stretched-link h4">NMB Bank</a></h4>
+                <h4><a href="#" class="stretched-link h4">NATIONAL MICROFINANCE BANK(NMB) LIMITED </a></h4>
+                <h6><strong>Swift Code: </strong> <span class="text-muted">NMIBTZTZ</span></h6>
                 <h6><strong>A/C Number: </strong> <span class="text-muted">22110106988</span></h6>
                 <h6><strong>Name: </strong> <span class="text-muted">Geospatial Technology and Environment</span></h6>
               </div>
