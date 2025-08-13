@@ -3,7 +3,7 @@
          <li><a href="{{ route('home') }}">Home</a></li>
        <li><a href="{{ route('about') }}">About</a></li>
        <li><a href="{{ route('projects') }}">Projects</a></li>
-         <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+         {{-- <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a> --}}
              <ul>
                {{-- <li><a href="{{ route('blog.index') }}">Blog</a></li> --}}
                {{-- <li><a href="{{ route('publications') }}">Publications</a></li> --}}

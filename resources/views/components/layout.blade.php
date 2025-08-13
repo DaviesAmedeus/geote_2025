@@ -115,8 +115,8 @@
                             <li><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="{{ route('about') }}">About</a></li>
                             <li><a href="{{ route('projects') }}">Projects</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Publications</a></li>
+                            {{-- <li><a href="#">Blog</a></li> --}}
+                            {{-- <li><a href="#">Publications</a></li> --}}
                         </ul>
                     </div><!-- End footer links column-->
 
