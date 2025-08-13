@@ -17,7 +17,7 @@
                 <h2></h2>
                 <div class="our-story">
                   <h3>Mapathons</h3>
-                  <p>We have been working with YouthMappers with the help of one of our co-founders and  regional ambassador <b>“Mr. Erick Mnyali Tamba”</b> to conduct mapping parties <b>“mapathons”</b>  to contribute to open data. Through 2022-2023, this program has been a perfect ground for  inspiring young minds in the GIS field. After the revision of this program in 2023, We expect  to have a combination of mapathons, boot camps, and inclusive events in partnership  with several chapters and organizations. The subscription to attending these programs shall  depend on the partnerships and type of event organized.  </p>
+                  <p>We have been working with YouthMappers and other OpenStreetMap communities around the world to host mapping parties (“mapathons”) that contribute to open data. This initiative has been a great platform for inspiring young minds in the GIS field. Looking ahead, we plan to bring together mapathons, boot camps, and inclusive events in collaboration with various chapters and organizations. Participation will depend on the partnerships in place and the type of event being organized. Stay tuned, more mapping parties are on the way! </p>
 {{--
                         <div class="d-flex align-items-center position-relative">
                             <div class="watch-video d-flex align-items-center position-relative  me-3">
@@ -32,7 +32,7 @@
                         </div> --}}
                     </div>
                 </div>
-            <div class="col-lg-7 about-img" style="background-image: url({{ asset('assets/img/landingpages_pics/slide_pics/slide4.jpg') }});"></div>
+            <div class="col-lg-7 about-img" style="background-image: url({{ asset('assets/img/website/mapathons.webp') }});"></div>
           </div>
         </div>
       </section>
