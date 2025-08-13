@@ -174,7 +174,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Project image directory</label>
                                          <input type="text" class="form-control" id="other_imgs"
-                                            placeholder="Eg: https://drive.google.com/drive/....folder" value="{{ old('other_imgs', $project->other_imgs) }}
+                                            placeholder="Eg: https://drive.google.com/drive/....folder" value="{{ old('other_imgs', $project->other_imgs) }}"
                                             name="other_imgs">
                                         @error('category')
                                             <div class="text-danger">{{ $message }}</div>

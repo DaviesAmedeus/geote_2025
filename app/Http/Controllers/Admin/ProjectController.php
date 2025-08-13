@@ -149,6 +149,8 @@ class ProjectController extends Controller
             'category' => ['required'],
         ]);
 
+
+
         try {
             DB::beginTransaction();
 
