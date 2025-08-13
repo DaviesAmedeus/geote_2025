@@ -85,7 +85,7 @@
                                             <li class="mb-1">
                                                 <i class="fas fa-images text-primary me-2"></i>
                                                 <a href="{{ $project->other_imgs }}" target="_blank"
-                                                    class="link">Project Images</a>
+                                                    >Project Images</a>
 
                                             </li>
                                         @endif

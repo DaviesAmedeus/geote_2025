@@ -131,7 +131,7 @@ class ProjectController extends Controller
             'description' => ['required'],
             'achievements' => 'sometimes|array',
             'achievements.*' => 'string|max:255',
-              'pdf_link' => [
+            'pdf_link' => [
                 'nullable',
                 'url', // Valid URL format
                 'active_url', // Verify DNS record exists
@@ -139,11 +139,12 @@ class ProjectController extends Controller
                 'max:255', // Reasonable length limit
                 // 'regex:/\.pdf$/i', // Ends with .pdf (case insensitive)
             ],
+
             'other_imgs' => [
                 'nullable',
                 'url',
                 'starts_with:https://',
-                'regex:/^https:\/\/drive\.google\.com\/drive\/folders\/.+$/',
+                // 'regex:/^https:\/\/drive\.google\.com\/drive\/folders\/.+$/',
             ],
             'status' => ['required', 'string', 'in:completed,pending,ongoing'],
             'category' => ['required'],
