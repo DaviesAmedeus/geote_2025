@@ -16,7 +16,7 @@
                 <div class="col-lg-7">
                     <h2></h2>
                     <div class="our-story">
-                        <h3>GIS Mentorship Program</h3>
+                        <h3>GIS Mentorship Program.</h3>
                         <p>Through this initiative, we understand the power of mentorship, especially with the hands-on
                             nature and
                             progressive advancement of the GIS and Remote Sensing discipline. Whether enrolled in an
@@ -67,10 +67,7 @@
 
                 <div class="slider" id="slider">
 
-                    <x-mentee
-                    imglink="assets/img/geote-team/staff/Anna.webp"
-                    name="Anna K Mzeru"
-                    testimonial="GeoTE's mentorship gave me the skills, confidence, and network to take my career to the next level."  />
+                    <x-mentee-testimonials />
 
                 </div>
                 <div class="controls">

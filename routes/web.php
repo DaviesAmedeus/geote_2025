@@ -13,6 +13,7 @@ Route::view('/geospark',  'website.geospark')->name('geospark');
 Route::view('/fpt',  'website.fpt')->name('fpt');
 Route::view('/shortcourses',  'website.shortcourses')->name('shortcourses');
 Route::view('/mentorship',  'website.mentorship')->name('mentorship');
+Route::view('/membership',  'website.membership')->name('membership');
 Route::view('/donate',  'website.donate')->name('donate');
 
 
@@ -27,7 +28,6 @@ Route::controller(ProjectController::class)->group(function () {
 Route::middleware('guest')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create']);
     Route::post('/register', [RegisteredUserController::class, 'store']);
-
     Route::get('/login', [SessionController::class, 'create'])->name('login');
     Route::post('/login', [SessionController::class, 'store']);
 });

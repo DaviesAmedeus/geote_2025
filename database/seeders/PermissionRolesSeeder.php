@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\PermissionRegistrar;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PermissionRolesSeeder extends Seeder
@@ -17,6 +18,9 @@ class PermissionRolesSeeder extends Seeder
      */
     public function run(): void
     {
+         // Reset cached roles and permissions
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
+
      $permissions = [
             // Super Admin
             'view_users', 'create_users', 'update_users', 'delete_users',
@@ -53,7 +57,7 @@ class PermissionRolesSeeder extends Seeder
         ]);
 
 
-        // Creating the user who is the superadmin with all permissions
+        // Creating the first user who is the superadmin with all permissions
         $user = User::create([
             'name'=> 'Super Admin',
             'email'=> 'superadmin@geote.org',

@@ -44,64 +44,67 @@
         </div>
     </div>
 
-    <!-- Blog Management -->
+    <!-- Event Management -->
     @php
-        $blogActive = request()->is('super-admin/blog*');
+        $eventActive = request()->is('super-admin/event*');
     @endphp
-    <div class="dash-nav-dropdown {{ $blogActive ? 'show' : '' }}">
+    <div class="dash-nav-dropdown {{ $eventActive ? 'show' : '' }}">
         <a href="#!"
-            class="dash-nav-item dash-nav-dropdown-toggle {{ $blogActive ? 'text-primary' : 'text-light' }}">
-            <i class="far fa-newspaper"></i> Blog
+            class="dash-nav-item dash-nav-dropdown-toggle {{ $eventActive ? 'text-primary' : 'text-light' }}">
+            <i class="far fa-newspaper"></i> Events
         </a>
-        <div class="dash-nav-dropdown-menu" style="{{ $blogActive ? 'display: block;' : '' }}">
+        <div class="dash-nav-dropdown-menu" style="{{ $eventActive ? 'display: block;' : '' }}">
             <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/blog/posts*') ? 'active' : '' }}">
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/event/posts*') ? 'active' : '' }}">
                 All Posts
             </a>
             <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/blog/posts*') ? 'active' : '' }}">
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/event/posts*') ? 'active' : '' }}">
                 All Posts
             </a>
             <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/blog/categories*') ? 'active' : '' }}">
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/event/categories*') ? 'active' : '' }}">
                 Categories
             </a>
             <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/blog/comments*') ? 'active' : '' }}">
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/event/comments*') ? 'active' : '' }}">
                 Comments
             </a>
         </div>
     </div>
 
 
-     <!-- Publications Management -->
+     <!-- Programs Management -->
     @php
-        $blogActive = request()->is('super-admin/blog*');
+        $programActive = request()->is('super-admin/program*');
     @endphp
-    <div class="dash-nav-dropdown {{ $blogActive ? 'show' : '' }}">
+    <div class="dash-nav-dropdown {{ $programActive ? 'show' : '' }}">
         <a href="#!"
-            class="dash-nav-item dash-nav-dropdown-toggle {{ $blogActive ? 'text-primary' : 'text-light' }}">
-            <i class="far fa-file-alt"></i> Publications
+            class="dash-nav-item dash-nav-dropdown-toggle {{ $programActive ? 'text-primary' : 'text-light' }}">
+            <i class="far fa-newspaper"></i> Programs
         </a>
-        <div class="dash-nav-dropdown-menu" style="{{ $blogActive ? 'display: block;' : '' }}">
+        <div class="dash-nav-dropdown-menu" style="{{ $programActive ? 'display: block;' : '' }}">
             <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/blog/posts*') ? 'active' : '' }}">
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/program/posts*') ? 'active' : '' }}">
                 All Posts
             </a>
             <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/blog/posts*') ? 'active' : '' }}">
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/program/posts*') ? 'active' : '' }}">
                 All Posts
             </a>
             <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/blog/categories*') ? 'active' : '' }}">
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/program/categories*') ? 'active' : '' }}">
                 Categories
             </a>
             <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/blog/comments*') ? 'active' : '' }}">
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/program/comments*') ? 'active' : '' }}">
                 Comments
             </a>
         </div>
     </div>
+
+
+
 
 
     <!-- Projects -->
@@ -126,6 +129,38 @@
             <a href="/super-admin/projects/trashed"
                 class="dash-nav-dropdown-item {{ request()->is('super-admin/projects/trashed') ? 'bg-primary' : 'text-light' }}">
                 Trashed
+            </a>
+        </div>
+    </div>
+
+
+
+
+        <!-- Publications Management -->
+    @php
+        $publicationActive = request()->is('super-admin/publication*');
+    @endphp
+    <div class="dash-nav-dropdown {{ $publicationActive ? 'show' : '' }}">
+        <a href="#!"
+            class="dash-nav-item dash-nav-dropdown-toggle {{ $publicationActive ? 'text-primary' : 'text-light' }}">
+            <i class="far fa-file-alt"></i> Publications
+        </a>
+        <div class="dash-nav-dropdown-menu" style="{{ $publicationActive ? 'display: block;' : '' }}">
+            <a href="#"
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/publication/posts*') ? 'active' : '' }}">
+                All Posts
+            </a>
+            <a href="#"
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/publication/posts*') ? 'active' : '' }}">
+                All Posts
+            </a>
+            <a href="#"
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/publication/categories*') ? 'active' : '' }}">
+                Categories
+            </a>
+            <a href="#"
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/publication/comments*') ? 'active' : '' }}">
+                Comments
             </a>
         </div>
     </div>

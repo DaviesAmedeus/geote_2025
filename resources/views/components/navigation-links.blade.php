@@ -23,6 +23,7 @@
                 <li><a href="{{ route('fpt') }}">FPT</a></li>
                 <li><a href="{{ route('shortcourses') }}">GIS Short course</a></li>
                 <li><a href="{{ route('mentorship') }}">GIS Mentorship</a></li>
+                <li><a href="{{ route('membership') }}">GeoTE Membership</a></li>
 
             </ul>
         </li>
@@ -41,4 +42,3 @@
 
     </ul>
 </nav>
-
