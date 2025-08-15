@@ -9,7 +9,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::with('user')->where('status', '!=', 'pending')->latest()->paginate(6);
+        $projects = Project::with('user')->where('status', '!=', 'pending')->orderBy('start_date', 'desc')->paginate(6);
         return view('website.projects.index', compact('projects'));
     }
 
