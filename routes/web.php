@@ -9,7 +9,6 @@ use App\Http\Controllers\RegisteredUserController;
 // Returns views of static pages on the website
 Route::view('/',  'website.index')->name('home');
 Route::view('/about', 'website.about')->name('about');
-Route::view('/mapathons',  'website.mapathons')->name('mapathons');
 Route::view('/geospark',  'website.geospark')->name('geospark');
 Route::view('/fpt',  'website.fpt')->name('fpt');
 Route::view('/shortcourses',  'website.shortcourses')->name('shortcourses');
@@ -18,15 +17,17 @@ Route::view('/membership',  'website.membership')->name('membership');
 Route::view('/donate',  'website.donate')->name('donate');
 
 
+Route::controller(EventController::class)->group(function () {
+    Route::get('/mapathons', 'mapathonsIndex')->name('mapathons.index');
+    Route::get('/mapathons/{mapathon}/show', 'mapathonsShow')->name('mapathons.show');
+});
+
 Route::controller(ProjectController::class)->group(function () {
     Route::get('/projects', 'index')->name('projects');
     Route::get('/projects/{project}/show', 'show')->name('projects.show');
 });
 
-Route::controller(EventController::class)->group(function () {
-    Route::get('/mapathons', 'mapathonsIndex')->name('mapathons.index');
-    Route::get('/events/{event}/show', 'show')->name('events.show');
-});
+
 
 
 // Auth

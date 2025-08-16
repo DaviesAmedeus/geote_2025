@@ -14,11 +14,11 @@ class EventController extends Controller
         return view('website.mapathons.index', compact('mapathons'));
     }
 
-    public function show(Event $project)
+    public function mapathonsShow(Event $mapathon)
     {
 
         // $otherEvents = Event::where('id', '!=', $project->id)->where('status', '!=', 'pending')->latest()->take(5)->get();
 
-        return view('website.mapathons.show');
+        return view('website.mapathons.show', compact('mapathon'));
     }
 }

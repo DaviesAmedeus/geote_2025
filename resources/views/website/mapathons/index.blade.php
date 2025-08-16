@@ -54,6 +54,8 @@
                     dolorem dolore earum</p>
             </div>
 
+             {{ $mapathons->links() }}
+
             <div class="row gy-4 pb-3">
 
                 @foreach ($mapathons as $mapathon)
@@ -68,7 +70,7 @@
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $mapathon->title }}</h4>
                                         <p> @truncate($mapathon->description, 200) </p>
-                                        <a href="service-details.html" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+                                        <a href="{{ route('mapathons.show', $mapathon->id) }}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +82,7 @@
 
             </div>
 
-            {{ $mapathons->links() }}
+
 
         </div>
     </section><!-- End Constructions Section -->
