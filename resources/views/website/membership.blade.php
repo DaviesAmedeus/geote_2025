@@ -32,7 +32,7 @@
                             <i class="bi bi-person"></i>
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3QwwljcAQi3kpCIogMkHdHMvMNCtcISOvAab8IfSRy0mwCA/viewform?usp=header"
                                 target="_blank">
-                                Interested to become a menber? (click here)</a>
+                                Interested to become a member? (click here)</a>
                         </div>
 
                         <div class="watch-video d-flex align-items-center position-relative">
