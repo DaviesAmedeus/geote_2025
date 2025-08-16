@@ -26,7 +26,7 @@ class ProjectFactory extends Factory
             'status' => $this->faker->randomElement(['completed', 'ongoing', 'pending']),
             'category' => $this->faker->randomElement(['geospatial', 'remote_sensing', 'gis_mapping']),
             'start_date' => $this->faker->date(),
-            'end_date' => $this->faker->optional()->date(),
+            'end_date' => $this->faker->date(),
             'achievements' => $this->faker->randomElements([
                 'Mapped 10 regions',
                 'Collected 5TB of data',
