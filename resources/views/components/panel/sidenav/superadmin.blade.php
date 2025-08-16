@@ -170,4 +170,9 @@
         class="dash-nav-item {{ request()->is('super-admin/settings*') ? 'text-primary' : 'text-light' }}">
         <i class="fas fa-cog"></i> Settings
     </a>
+
+    <a href="/"
+        class="dash-nav-item {{ request()->is('super-admin/settings*') ? 'text-primary' : 'text-light' }}">
+        <i class="fas fa-globe"></i> Website
+    </a>
 </nav>

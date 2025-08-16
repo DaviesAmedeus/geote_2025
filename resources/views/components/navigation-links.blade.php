@@ -27,17 +27,35 @@
 
             </ul>
         </li>
-        @if (optional(Auth::user())->is_admin)
-            <li class="dropdown"><a href="#"><span>LOGGED IN</span> <i
-                        class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                    <li><a href="/admin/dashboard">Dashboard</a></li>
-            </li>
-    </ul>
-    </li>
-    @endif
 
-    <li><a class="btn btn-lg btn-outline-success px-3 py-2" href="/donate">Donate</a></li>
+
+        <li><a class="btn btn-lg btn-outline-success px-3 py-2" href="/donate">Donate</a></li>
+
+
+
+        @auth
+            <li class="dropdown"><a href="#" class="btn btn-outline-primary px-3 py-2"><span>LOGGED IN</span> <i
+                        class="bi bi-chevron-down dropdown-indicator"></i></a>
+
+                        <ul>
+                @if (Auth::user()->hasRole('superAdmin'))
+
+                    <li><a href="{{ route('superadmin.dashboard') }}">Dashboard</a></li>
+
+                @endif
+
+                <form action="/logout" method="POST">
+                    @csrf
+                    <li><button class="btn btn-outline-success ms-3 px-2" href="{{ route('logout') }}">Logout</button></li>
+                </form>
+
+
+                 </ul>
+
+            </li>
+        @endauth
+
+
 
 
     </ul>
