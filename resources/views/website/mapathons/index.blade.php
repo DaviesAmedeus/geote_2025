@@ -4,7 +4,7 @@
     <x-slot:landing_section>
         <x-landing-pages.landing-page
             style="background-image: url('{{ asset('assets/img/landingpages_pics/slide_pics/slide5.jpg') }}');">
-            Mapathons New
+            Mapathon Events
         </x-landing-pages.landing-page>
     </x-slot:landing_section>
 

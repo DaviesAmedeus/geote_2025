@@ -11,7 +11,7 @@
     </x-slot:landing_section>
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about pb-0">
         <div class="container" data-aos="fade-up">
 
             <div class="row position-relative">
@@ -86,30 +86,52 @@
 
 
 
+    </section>
+
+
+
+    <section id="constructions" class="constructions p-0">
         <div class="container" data-aos="fade-up">
 
-            <div class="row position-relative">
+            <div class="section-header">
+                <h2>From Our Latest geosparks</h2>
+                <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis
+                    dolorem dolore earum</p>
+            </div>
+
+             {{ $geosparks->links() }}
+
+            <div class="row gy-4 pb-3">
+
+                @foreach ($geosparks as $geospark)
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-item">
+                            <div class="row">
+                                <div class="col-xl-5">
+                                    <div class="card-bg" style="background-image: url({{ asset('storage/' . $geospark->image) ?? asset('assets/img/contours.jpg') }});">
+                                    </div>
+                                </div>
+                                <div class="col-xl-7 d-flex align-items-center">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ $geospark->title }}</h4>
+                                        <p> @truncate($geospark->description, 200) </p>
+                                        <a href="{{ route('geosparks.show', $geospark->id) }}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Card Item -->
+                @endforeach
 
 
-
-                {{-- <div class="col-lg-7">
-        <div class="our-story">
-          <h3>Special Announcements</h3>
-
-
-          <ul>
-            <li><i class="bi bi-bullet"></i><p><b>Call for posters:</b></p>
-            </li>
-             <li><i class="bi bi-point-circle"></i><a href="https://docs.google.com/forms/d/1INyylFCLJMbKeZZ1kc3KoALRj8bsAylC8OaFMPSgDAQ/preview"> >>Showcase your research projects or map <br>visualizations addressing real-world challenges!</a></li>
-
-          </ul>
-
-        </div>
-      </div> --}}
 
             </div>
+
+
+
         </div>
-    </section>
+    </section><!-- End Constructions Section -->
+
 
 
 

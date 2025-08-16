@@ -136,7 +136,7 @@
                     <div class="col-lg-2 col-md-3 footer-links">
                         <h4>Events</h4>
                         <ul>
-                            <li><a href="{{ route('geospark') }}">Geo Spark</a></li>
+                            <li><a href="{{ route('geosparks.index') }}">Geo Spark</a></li>
                             <li><a href="{{ route('mapathons.index') }}">Mapathons</a></li>
                         </ul>
                     </div><!-- End footer links column-->

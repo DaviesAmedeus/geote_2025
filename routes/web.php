@@ -9,7 +9,7 @@ use App\Http\Controllers\RegisteredUserController;
 // Returns views of static pages on the website
 Route::view('/',  'website.index')->name('home');
 Route::view('/about', 'website.about')->name('about');
-Route::view('/geospark',  'website.geospark')->name('geospark');
+
 Route::view('/fpt',  'website.fpt')->name('fpt');
 Route::view('/shortcourses',  'website.shortcourses')->name('shortcourses');
 Route::view('/mentorship',  'website.mentorship')->name('mentorship');
@@ -20,6 +20,9 @@ Route::view('/donate',  'website.donate')->name('donate');
 Route::controller(EventController::class)->group(function () {
     Route::get('/mapathons', 'mapathonsIndex')->name('mapathons.index');
     Route::get('/mapathons/{mapathon}/show', 'mapathonsShow')->name('mapathons.show');
+
+    Route::get('/geosparks', 'geosparksIndex')->name('geosparks.index');
+    Route::get('/geosparks/{geospark}/show', 'geosparksShow')->name('geosparks.show');
 });
 
 Route::controller(ProjectController::class)->group(function () {
