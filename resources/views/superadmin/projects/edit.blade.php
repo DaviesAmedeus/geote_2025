@@ -87,7 +87,7 @@
                                                 <img id="coverPreview"
                                                     src="{{ asset('storage/' . $project->image) ?? asset('imgs/demo/profile.jpg') }}"
                                                     class="img-fluid border mb-2"
-                                                    style="width: 100%; height: 400px; object-fit: contain; border-radius: 8px;">
+                                                    style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
 
                                                 <!-- Hover Overlay -->
                                                 <div class="cover-edit-overlay" style="border-radius: 8px;">

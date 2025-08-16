@@ -44,33 +44,36 @@
         </div>
     </div>
 
+       <div style="border-bottom: 1px solid #6d6d6d; margin: 10px 10px; "></div>
+
     <!-- Event Management -->
     @php
-        $eventActive = request()->is('super-admin/event*');
+        $eventsActive = request()->is('super-admin/events*');
     @endphp
-    <div class="dash-nav-dropdown {{ $eventActive ? 'show' : '' }}">
+    <div class="dash-nav-dropdown {{ $eventsActive ? 'show' : '' }}">
         <a href="#!"
-            class="dash-nav-item dash-nav-dropdown-toggle {{ $eventActive ? 'text-primary' : 'text-light' }}">
-            <i class="far fa-newspaper"></i> Events
+            class="dash-nav-item dash-nav-dropdown-toggle {{ $eventsActive ? 'text-primary' : 'text-light' }}">
+            <i class="fas fa-calendar-check"></i> Event Posts
         </a>
-        <div class="dash-nav-dropdown-menu" style="{{ $eventActive ? 'display: block;' : '' }}">
-            <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/event/posts*') ? 'active' : '' }}">
-                All Posts
+        <div class="dash-nav-dropdown-menu" style="{{ $eventsActive ? 'display: block;' : '' }}">
+            <a href="{{ route('superadmin.events.create') }}"
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/events/create') ? 'bg-primary' : 'text-light' }}">
+                Add +
             </a>
-            <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/event/posts*') ? 'active' : '' }}">
-                All Posts
+            <a href="{{ route('superadmin.events.all') }}"
+                class="dash-nav-dropdown-item  {{ request()->is('super-admin/events') ? 'bg-primary' : 'text-light' }}">
+                All
             </a>
-            <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/event/categories*') ? 'active' : '' }}">
+
+              <a href="/super-admin/events"
+                class="dash-nav-dropdown-item  {{ request()->is('super-admin/events/categories') ? 'bg-primary' : 'text-light' }}">
                 Categories
             </a>
-            <a href="#"
-                class="dash-nav-dropdown-item {{ request()->is('super-admin/event/comments*') ? 'active' : '' }}">
-                Comments
-            </a>
-        </div>
+
+            <a href="{{ route('superadmin.events.trashed') }}"
+                class="dash-nav-dropdown-item {{ request()->is('super-admin/events/trashed') ? 'bg-primary' : 'text-light' }}">
+                Trashed
+        </a>
     </div>
 
 
@@ -81,7 +84,7 @@
     <div class="dash-nav-dropdown {{ $programActive ? 'show' : '' }}">
         <a href="#!"
             class="dash-nav-item dash-nav-dropdown-toggle {{ $programActive ? 'text-primary' : 'text-light' }}">
-            <i class="far fa-newspaper"></i> Programs
+            <i class="fas fa-puzzle-piece"></i> Program Posts
         </a>
         <div class="dash-nav-dropdown-menu" style="{{ $programActive ? 'display: block;' : '' }}">
             <a href="#"
@@ -107,26 +110,26 @@
 
 
 
-    <!-- Projects -->
+    <!-- Projects Management -->
     @php
         $projectsActive = request()->is('super-admin/projects*');
     @endphp
     <div class="dash-nav-dropdown {{ $projectsActive ? 'show' : '' }}">
         <a href="#!"
             class="dash-nav-item dash-nav-dropdown-toggle {{ $projectsActive ? 'text-primary' : 'text-light' }}">
-            <i class="fas fa-project-diagram"></i> Projects
+            <i class="fas fa-project-diagram"></i> Project Posts
         </a>
         <div class="dash-nav-dropdown-menu" style="{{ $projectsActive ? 'display: block;' : '' }}">
-            <a href="/super-admin/projects/create"
+            <a href="{{ route('superadmin.projects.create') }}"
                 class="dash-nav-dropdown-item {{ request()->is('super-admin/projects/create') ? 'bg-primary' : 'text-light' }}">
-                Add Project +
+                Add  +
             </a>
-            <a href="/super-admin/projects"
+            <a href="{{ route('superadmin.projects.all') }}"
                 class="dash-nav-dropdown-item  {{ request()->is('super-admin/projects') ? 'bg-primary' : 'text-light' }}">
-                All Projects
+                All
             </a>
 
-            <a href="/super-admin/projects/trashed"
+            <a href="{{ route('superadmin.projects.trashed') }}"
                 class="dash-nav-dropdown-item {{ request()->is('super-admin/projects/trashed') ? 'bg-primary' : 'text-light' }}">
                 Trashed
             </a>
@@ -164,6 +167,8 @@
             </a>
         </div>
     </div>
+
+      <div style="border-bottom: 1px solid #6d6d6d; margin: 10px 10px; "></div>
 
     <!-- Settings -->
     <a href="#"
