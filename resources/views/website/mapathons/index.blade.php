@@ -50,15 +50,14 @@
 
             <div class="section-header">
                 <h2>From Our Latest Mapathons</h2>
-                <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis
-                    dolorem dolore earum</p>
+                <p>Join hands-on mapping and workshops. Contribute, learn, and connect with a community making real-world impact!</p>
             </div>
 
              {{ $mapathons->links() }}
 
             <div class="row gy-4 pb-3">
 
-                @foreach ($mapathons as $mapathon)
+                @forelse ($mapathons as $mapathon)
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-item">
                             <div class="row">
@@ -76,7 +75,13 @@
                             </div>
                         </div>
                     </div><!-- End Card Item -->
-                @endforeach
+
+
+                     @empty
+                    <div>
+                        <p class="text-center">(Nothing for now! GeoTE Team is working on something cool for you. Please be patient!)</p>
+                    </div>
+                @endforelse
 
 
 

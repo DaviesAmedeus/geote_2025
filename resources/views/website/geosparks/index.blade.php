@@ -94,16 +94,15 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>From Our Latest geosparks</h2>
-                <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis
-                    dolorem dolore earum</p>
+                <h2>From Our Latest GeoSparks</h2>
+                <p>Check out events connecting students, alumni, and experts. Participate, support, or get inspired by geospatial technology in action!</p>
             </div>
 
              {{ $geosparks->links() }}
 
             <div class="row gy-4 pb-3">
 
-                @foreach ($geosparks as $geospark)
+                @forelse ($geosparks as $geospark)
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-item">
                             <div class="row">
@@ -121,8 +120,13 @@
                             </div>
                         </div>
                     </div><!-- End Card Item -->
-                @endforeach
 
+                    @empty
+                    <div>
+                        <p class="text-center">(Nothing for now! GeoTE Team is working on something cool for you. Please be patient!)</p>
+                    </div>
+
+                @endforelse
 
 
             </div>
