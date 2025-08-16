@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(EventCategory::class)->constrained()->cascadeOnDelete();
             $table->string('title')->nullable();
-            $table->string('description', 300)->nullable();
+            $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('event_images')->nullable(); //a link to google drive img repo
             $table->unsignedInteger('updated_by')->nullable();

@@ -74,6 +74,15 @@
                                 </div>
 
 
+                                  <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Event Description</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="A Litle about the event......."
+                                        rows="7" name="description">{{ old('description') }}</textarea>
+                                    @error('description')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
 
 
                               <div class="form-row">

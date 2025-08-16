@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisteredUserController;
@@ -17,10 +18,14 @@ Route::view('/membership',  'website.membership')->name('membership');
 Route::view('/donate',  'website.donate')->name('donate');
 
 
-
 Route::controller(ProjectController::class)->group(function () {
     Route::get('/projects', 'index')->name('projects');
     Route::get('/projects/{project}/show', 'show')->name('projects.show');
+});
+
+Route::controller(EventController::class)->group(function () {
+    Route::get('/mapathons', 'mapathonsIndex')->name('mapathons.index');
+    Route::get('/events/{event}/show', 'show')->name('events.show');
 });
 
 

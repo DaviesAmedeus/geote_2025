@@ -14,7 +14,7 @@
                     class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
                 <li><a href="{{ route('geospark') }}">Geo_spark</a></li>
-                <li><a href="{{ route('mapathons') }}">Mapathons</a></li>
+                <li><a href="{{ route('mapathons.index') }}">Mapathons</a></li>
             </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Programs</span> <i

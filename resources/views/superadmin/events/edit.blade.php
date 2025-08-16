@@ -78,7 +78,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Project Description</label>
+                                    <label for="exampleFormControlTextarea1">Event Description</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="A Litle about the event......."
                                         rows="7" name="description">{{ old('description', $event->description) }}</textarea>
                                     @error('description')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\SuperAdmin\Event;
 
+use App\Rules\MaxWords;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateEventPostRequest extends FormRequest
@@ -23,7 +24,7 @@ class UpdateEventPostRequest extends FormRequest
     {
         return [
                'title' => ['required', 'string', 'max:100'],
-            'description' => ['nullable', 'string', 'max:300'],
+            'description' => ['nullable', 'string', new MaxWords(300)],
             'image' =>  ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048',     'dimensions:width=1080,height=500'], // At least 1080×500 (but not exact)
             'event_images' => [
                 'nullable',

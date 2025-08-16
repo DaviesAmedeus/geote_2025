@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
         Model::preventLazyLoading();
         Paginator::useBootstrapFive();
          Blade::directive('truncate', function ($expression) {
-        return "<?php echo Str::limit($expression, 200, '...'); ?>";
+        return "<?php echo Str::limit($expression,  '...'); ?>";
     });
     }
 }
