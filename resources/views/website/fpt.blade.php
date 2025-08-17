@@ -28,7 +28,7 @@
                         into university curricula. This initiative includes a five-week Field Practical
                         Training (FPT) at Sokoine University of Agriculture, engaging over 60
                         students and with plans to expand to other academic institutions. Midway
-                        through the FPT, a one-day event <a href="{{ route('geospark') }}"><b>“GeoSpark”</b></a> connects YouthMappers
+                        through the FPT, a one-day event <a href="{{ route('geosparks.index') }}"><b>“GeoSpark”</b></a> connects YouthMappers
                         students with YouthMappers alumni, faculty and industry experts for skill-
                         building, inspiration, recognition and networking, offering students insights
                         into career opportunities</p>
