@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('subcategories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('subcategory_id')->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
             $table->string('name');        // e.g. GeoSpark, Mapathon, GIS Mentorship, Short Course
             $table->string('slug')->unique();
             $table->text('description')->nullable();

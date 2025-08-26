@@ -13,50 +13,54 @@
 
 
         <x-team-member
-        imglink='assets/img/geote-team/staff/Erick.png'
+        imglink='assets/img/geote-team/staff/erick.webp'
         position='Co-founder & Executive Director'
         memberName='Erick Tamba Mnyali'
         />
 
           <x-team-member
-        imglink='assets/img/geote-team/staff/emmanuel.png'
+        imglink='assets/img/geote-team/staff/emmanuel.webp'
         position='Human Resource Manager'
         memberName='Emmanuel Richard Mahe'
         />
 
         <x-team-member
         imglink='assets/img/geote-team/staff/ezekiel.png'
-        position='Program Manager'
-        memberName='Ezekiel E Kiariro'
+        position='Director of Programs'
+        memberName='Ezekiel Edgar Kiariro'
+        />
+
+           <x-team-member
+        imglink='assets/img/geote-team/staff/tatu.webp'
+        position='Finance Manager'
+        memberName='Tatu Sospeter Kazimoto'
         />
 
           <x-team-member
         imglink='assets/img/geote-team/staff/kenny.png'
-        position='Finance Manager'
-        memberName='Kelvin Manase'
+        position='Legal Affairs and Community Engagement'
+        memberName='Kelvin Sospeter Manase'
         />
 
 
         <x-team-member
         imglink='assets/img/geote-team/staff/juliana.png'
         position='Secretary'
-        memberName='Juliana B Mugina'
+        memberName='Juliana Benard Mugina'
         />
-
-
 
 
         <x-team-member
         imglink='assets/img/geote-team/staff/Anna.webp'
         position='Membership Coordinator'
-        memberName='Anna K Mzeru'
+        memberName='Anna Khalid Mzeru'
         />
 
 
         <x-team-member
         imglink='assets/img/geote-team/staff/davies.png'
         position='Communications Manager'
-        memberName='Davies Amedeus'
+        memberName='Davies Amedeus Marenge'
         />
     </div>
 

@@ -17,6 +17,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Events', 'slug' => 'events', 'description' => 'All events we organize'],
             ['name' => 'Programs', 'slug' => 'programs', 'description' => 'All programs we run'],
             ['name' => 'News', 'slug' => 'news', 'description' => 'Latest news and updates'],
+            ['name' => 'Publications', 'slug' => 'publications', 'description' => 'All publications we have done'],
         ];
 
         foreach ($categories as $category) {
