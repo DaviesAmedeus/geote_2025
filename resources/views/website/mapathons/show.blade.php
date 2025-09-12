@@ -21,12 +21,12 @@
 
           <div class="col-lg-4">
             <div class="services-list">
-              <a href="{{ $mapathon->event_images }}" target="_blank" class="active btn btn-outline-success text-light"><span class="pe-2"><i class="bi bi-image"></i></span>Event Images (Click here!) </a>
+              <a href="{{ $mapathon->images_repository }}" target="_blank" class="active btn btn-outline-success text-light"><span class="pe-2"><i class="bi bi-image"></i></span>Check Event Images (Click here!) </a>
 
             </div>
 
             <h3>Before Reading this post, Just Remember!</h3>
-            <p>🌍 These Mapathons rely on community spirit! You can support by participating, sharing, or encouraging others to join.</p>
+            <p>These Mapathons rely on community spirit! You can support by participating, sharing, or encouraging others to join.</p>
                         <p class="text-muted"> <b>For more information on how to support reach us via:</b> </p>
                          <ul>
               <li><i class="bi bi-whatsapp"></i> <span><a href="https://wa.me/255688364134" target="_blank"> <b>+255 688 364 134</b> (click here)</a></span></li>
@@ -37,9 +37,9 @@
           </div>
 
           <div class="col-lg-8">
-            <img src="{{ asset('storage/' . $mapathon->image) ?? asset('assets/img/contours.jpg') }}" alt="" class="img-fluid services-img">
+            <img src="{{ asset('storage/' . $mapathon->cover_image) ?? asset('assets/img/contours.jpg') }}" alt="" class="img-fluid services-img">
             <h3>{{ $mapathon->title }}</h3>
-            <p>{!! nl2br(e($mapathon->description)) !!}</p>
+            <p>{!! nl2br(e($mapathon->content)) !!}</p>
 
 
           </div>

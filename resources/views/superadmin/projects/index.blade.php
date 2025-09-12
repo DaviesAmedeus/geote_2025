@@ -20,7 +20,7 @@
             <x-panel.table-wrap>
                 <thead>
                     <tr>
-                                                <th scope="col"></th>
+                        <th scope="col"></th>
 
                         <th scope="col">Title</th>
                         <th scope="col">Creator</th>
@@ -36,8 +36,8 @@
                         <a href="/">
                             <tr>
                                 <td>
-                                    <img src="{{ asset('storage/' . $project->image) ?? asset('assets/img/contours.jpg') }}" alt="Icon"
-                                        width="50" height="50" class="me-2 img-thumbnail">
+                                    <img src="{{ asset('storage/' . $project->image) ?? asset('assets/img/contours.jpg') }}"
+                                        alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
                                 </td>
                                 <th scope="row">{{ $project->title }}</th>
                                 <td>{{ $project->user?->name }}</td>
@@ -185,11 +185,11 @@
                             <h4><strong>Project achievements</strong>:</h4>
                             <ul class="list-unstyled">
                                             ${achievements.map(achievement => `
-                                                                                <li class="mb-2">
-                                                                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                                                                    ${achievement}
-                                                                                </li>
-                                                                            `).join('')}
+                                                                                        <li class="mb-2">
+                                                                                            <i class="fas fa-check-circle text-success me-2"></i>
+                                                                                            ${achievement}
+                                                                                        </li>
+                                                                                    `).join('')}
                                         </ul>
                         </div>
                     </div>
@@ -251,7 +251,7 @@
                       <div class="row">
                         <div class="for-group col-md-12">
                             ${data.image ? `<img id="coverPreview" src="${data.image}" class="img-fluid border mb-2"
-                                                                style="width: 100%; height: 500px; object-fit: fill; border-radius: 8px;">` : ''}
+                                                                        style="width: 100%; height: 500px; object-fit: fill; border-radius: 8px;">` : ''}
 
                         </div>
                     </div>

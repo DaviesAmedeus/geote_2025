@@ -16,9 +16,5 @@
             </div>
         </div>
 
-
     </div>
-
-
-
 </x-panel.layout>

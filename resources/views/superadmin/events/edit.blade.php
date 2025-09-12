@@ -1,14 +1,10 @@
 <x-panel.dash>
     <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1 class="dash-title">Create Event Post</h1>
-            </div>
+       
 
-            <div class="col-md-6 me-3" style="text-align: end">
-                <strong> <a href="{{ route('superadmin.events.all') }}">projects</a>/create</strong>
-            </div>
-        </div>
+        <x-slot name="breadcrumb">
+        <x-panel.breadcrumb pageTitle='Edit Event Post'></x-panel.breadcrumb>
+    </x-slot>
 
         <x-panel.alerts />
 
@@ -52,7 +48,7 @@
                                                 style="cursor: pointer;">
                                                 <!-- Cover Image Preview -->
                                                 <img id="coverPreview"
-                                                    src="{{ asset('storage/' . $event->image) ?? asset('imgs/demo/profile.jpg') }}"
+                                                    src="{{ asset('storage/' . $event->cover_image) ?? asset('imgs/demo/profile.jpg') }}"
                                                     class="img-fluid border mb-2"
                                                     style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
 
@@ -64,13 +60,13 @@
                                             </label>
 
                                             <!-- Hidden File Input -->
-                                            <input type="file" class="d-none" id="cover_photo" name="image"
-                                                accept="image/*">
+                                            <input type="file" class="d-none" id="cover_photo" name="cover_image"
+                                                accept="cover_image/*">
 
                                             <small class="form-text text-muted d-block">
                                                 Recommended size: 1080x500 pixels (Rectangle). Max file size: 2MB.
                                             </small>
-                                            @error('image')
+                                            @error('cover_image')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -80,7 +76,7 @@
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Event Description</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="A Litle about the event......."
-                                        rows="7" name="description">{{ old('description', $event->description) }}</textarea>
+                                        rows="7" name="content">{{ old('content', $event->content) }}</textarea>
                                     @error('description')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -90,9 +86,9 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="exampleFormControlSelect1">Image directory link</label>
-                                        <input type="text" class="form-control" id="event_images"
+                                        <input type="text" class="form-control" id="images_repository"
                                             placeholder="Eg: https://drive.google.com/drive/....folder"
-                                            value="{{ old('event_images', $event->event_images) }}" name="event_images">
+                                            value="{{ old('images_repository', $event->images_repository) }}" name="images_repository">
                                         @error('category')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -105,12 +101,15 @@
                                         <select class="form-control" id="exampleFormControlSelect1" name="status">
                                             <option class="text-muted">--- Enable/Disable --</option>
 
-                                            <option value="1"
-                                                {{ isset($event->status) && $event->status == 1 ? 'selected' : '' }}>
-                                                Enable</option>
-                                            <option value="0"
-                                                {{ isset($event->status) && $event->status == 0 ? 'selected' : '' }}>
-                                                Disable</option>
+                                            <option value="published"
+                                                {{ isset($event->status) && $event->status == 'published' ? 'selected' : '' }}>
+                                                Published</option>
+                                            <option value="archived"
+                                                {{ isset($event->status) && $event->status == 'archived' ? 'selected' : '' }}>
+                                                Archive</option>
+                                                <option value="draft"
+                                                {{ isset($event->status) && $event->status == 'draft' ? 'selected' : '' }}>
+                                                Draft</option>
                                         </select>
                                         @error('status')
                                             <div class="text-danger">{{ $message }}</div>
@@ -119,16 +118,16 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Category</label>
-                                        <select class="form-control" id="exampleFormControlSelect1" name="category">
+                                        <select class="form-control" id="exampleFormControlSelect1" name="subcategory">
                                             @foreach ($eventCategories as $category)
                                                 <option value="{{ $category->id }}"
-                                                    {{ isset($event->eventCategory->id) && $event->eventCategory->id === $category->id ? 'selected' : '' }}>
+                                                    {{ isset($event->subcategory->id) && $event->subcategory->id === $category->id ? 'selected' : '' }}>
                                                     {{ $category->name }}</option>
                                             @endforeach
 
 
                                         </select>
-                                        @error('category')
+                                        @error('subcategory')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

@@ -18,13 +18,18 @@ Route::view('/donate',  'website.donate')->name('donate');
 
 
 Route::controller(EventController::class)->group(function () {
+    // Mapathons
     Route::get('/mapathons', 'mapathonsIndex')->name('mapathons.index');
     Route::get('/mapathons/{mapathon}/show', 'mapathonsShow')->name('mapathons.show');
 
+    // Geosparks
     Route::get('/geosparks', 'geosparksIndex')->name('geosparks.index');
     Route::get('/geosparks/{geospark}/show', 'geosparksShow')->name('geosparks.show');
 });
 
+
+
+// Dont touch right for a moment let it work as it is cause there are data already in the database runing live.
 Route::controller(ProjectController::class)->group(function () {
     Route::get('/projects', 'index')->name('projects');
     Route::get('/projects/{project}/show', 'show')->name('projects.show');

@@ -1,17 +1,11 @@
 <x-panel.dash>
-    <div class="container-fluid">
-        <div class="row align-items-center pr-3">
-            <div class="col-md-6">
-                <h1 class="dash-title">Trashed Event Posts</h1>
-            </div>
-
-            <div class="col-md-6 me-3" style="text-align: end">
-                <strong> deleted<a href="/super-admin/trashs/create">/create</a></strong>
-            </div>
-        </div>
 
 
-        <x-panel.alerts />
+        <x-slot name="breadcrumb">
+            <x-panel.breadcrumb pageTitle='Trashed Geospark Posts'></x-panel.breadcrumb>
+        </x-slot>
+
+
 
 
 
@@ -21,18 +15,16 @@
                 <thead>
                     <tr>
                         <th scope="col"></th>
-
                         <th scope="col">Title</th>
+                        <th scope="col">Event type</th>
                         <th scope="col">Creator</th>
-                        <th scope="col">Deleted_at</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col">Trashed at</th>
 
                     </tr>
                 </thead>
                 <tbody>
-
-                    @foreach ($trashedEvents as $trash)
+                    @forelse ($trashedEvents as $trash)
                         <a href="/">
                             <tr>
                                 <td>
@@ -40,7 +32,20 @@
                                         alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
                                 </td>
                                 <th scope="row">{{ $trash->title }}</th>
-                                <td>{{ $trash->user?->name }}</td>
+                                <td>{{ $trash->subcategory?->name }}</td>
+                                <td>{{ $trash->author?->name }}</td>
+                                <td>
+                                @if ($trash->status === 'published')
+                                    <span class="badge rounded badge-success px-3 py-1">Published</span>
+                                @endif
+                                @if ($trash->status === 'pending')
+                                    <span class="badge rounded badge-secondary  px-3 py-1">Pending</span>
+                                @endif
+
+                                @if ($trash->status === 'archived')
+                                    <span class="badge rounded badge-warning  px-3 py-1">Archived</span>
+                                @endif
+                            </td>
                                 <td>{{ $trash->deleted_at ? $trash->deleted_at->format('F jS, Y') : '--' }}</td>
                                 <td>
                                     @if ($trash->status === 1)
@@ -54,18 +59,17 @@
 
 
 
-                                        <form action="{{ route('superadmin.events.restore', $trash->id) }}" method="post">
+                                        <form action="{{ route('superadmin.events.restore', $trash->id) }}"
+                                            method="post">
                                             @csrf
                                             @method('PATCH')
                                             <button type="submit" class="btn btn-secondary mr-3"><i
                                                     class="fas fa-undo"></i></button>
                                         </form>
 
-
-
-                                         <button class="btn mr-3 btn-danger view-danger"
-                                            data-trash-id="{{ $trash->id }}" data-bs-toggle="modal"
-                                            data-bs-target="#trashModal">
+                                        <button class="btn mr-3 btn-danger view-danger"
+                                            data-delete-id="{{ $trash->id }}" data-bs-toggle="modal"
+                                            data-bs-target="#deleteModal">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </div>
@@ -73,7 +77,15 @@
                             </tr>
 
                         </a>
-                    @endforeach
+                    @empty
+                        <a href="/">
+                            <tr>
+                                <td class="text-center py-3" colspan="100%"> <strong>--- No Trashed Geosparks posts! ---</strong>
+                                </td>
+                            </tr>
+
+                        </a>
+                    @endforelse
 
 
 
@@ -90,54 +102,25 @@
 
         </div>
 
-    </div>
 
 
 
 
-    <!-- Edit Profile Modal -->
-    <div class="modal fade" id="trashModal" tabindex="-1" role="dialog" aria-labelledby="trashModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
 
-                <div class="modal-body px-5">
-                    <div id="trash-details">
-                        {{-- trash content will display here --}}
-
-                        <div class="row">
-                            <div class="col-md-12 alert alert-danger text-center py-3">
-                                <strong>Are you sure you want to delete this trash?</strong>
-                                <div class="mt-2">
-
-                                    <form id="forceDelete" action="" method="post"
-                                        class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger">
-                                            <i class="fas fa-trash mr-1"></i> Yes Delete!
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
-    </div>
+    <!-- Confirm Delete Category Modal -->
+    <x-panel.modals.confirm-delete-modal warningMsg="Are you sure you want to delete this Event Post?">
+        <form id="forceDelete" action="" method="post" class="d-inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-outline-danger">
+                <i class="fas fa-trash mr-1"></i> Yes Delete!
+            </button>
+        </form>
+    </x-panel.modals.confirm-delete-modal>
 
 
     {{-- Ajax script --}}
-    @push('scripts')
+    {{-- @push('scripts')
        <script>
         document.addEventListener('DOMContentLoaded', function(){
             var deleteModal = document.getElementById('trashModal');
@@ -152,7 +135,13 @@
             });
         } );
        </script>
+    @endpush --}}
+
+    <!--script related to Confirm Delete Category Modal -->
+    @push('scripts')
+        <x-panel.scripts.delete-event-category-script action="/super-admin/events/" />
     @endpush
+
 
 
 

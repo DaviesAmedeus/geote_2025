@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\EventController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\OverViewController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\OverViewController;
+use App\Http\Controllers\Admin\EventCategoryController;
 use App\Http\Controllers\Admin\UserManagementController;
-
 
 Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(function () {
 
@@ -22,20 +22,34 @@ Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(fun
         });
 
 
-    // Event management
-    Route::controller(EventController::class)->group(function(){
-        Route::get('/events', 'index')->name('superadmin.events.all');
-           Route::get('/events/create', 'create')->name('superadmin.events.create');
-            Route::post('/events/create', 'store')->name('superadmin.events.store');
-            Route::get('/events/{event}/show', 'show')->name('superadmin.events.show');
-            Route::delete('/events/{event}/destroy', 'destroy')->name('superadmin.events.destroy')->withTrashed();; //Soft deletes (for trashed events)
-            Route::get('/events/{event}/edit', 'edit')->name('superadmin.events.edit');
-            Route::patch('/events/{event}/update', 'update')->name('superadmin.events.update');
-            Route::delete('/events/{event}/trash', 'trash')->name('superadmin.events.trash'); //Soft deletes (for trashed events)
-            Route::get('/events/trashed', 'trashed')->name('superadmin.events.trashed');
-            Route::patch('/events/{event}/restore', 'restore')->name('superadmin.events.restore')->withTrashed(); //Restore trashed projects
-    });
 
+    // Event management
+    Route::controller(EventController::class)->group(function () {
+        Route::get('/events/all/geosparks', 'geosparks')->name('superadmin.events.all.geosparks');
+        Route::get('/events/all/mapathons', 'mapathons')->name('superadmin.events.all.mapathons');
+
+        Route::get('/events/create', 'create')->name('superadmin.events.create');
+        Route::post('/events/create', 'store')->name('superadmin.events.store');
+        Route::get('/events/{event}/show', 'show')->name('superadmin.events.show');
+        Route::get('/events/{event}/edit', 'edit')->name('superadmin.events.edit');
+        Route::patch('/events/{event}/update', 'update')->name('superadmin.events.update');
+
+        Route::delete('/events/{event}/trash', 'trash')->name('superadmin.events.trash'); //Soft deletes (for trashed events)
+        Route::get('/events/trashed/geosparks', 'trashedGeosparks')->name('superadmin.events.trashed.geosparks');
+        Route::get('/events/trashed/mapathons', 'trashedMapathons')->name('superadmin.events.trashed.mapathons');
+        Route::delete('/events/{event}/destroy', 'destroy')->name('superadmin.events.destroy')->withTrashed();; //Soft deletes (for trashed events)
+        Route::patch('/events/{event}/restore', 'restore')->name('superadmin.events.restore')->withTrashed(); //Restore trashed projects
+
+    });
+    
+    //Event categories
+    Route::controller(EventCategoryController::class)->group(function () {
+        Route::get('/events/categories', 'index')->name('superadmin.events.categories');
+        Route::post('/events/categories/create', 'store')->name('superadmin.events.categories.store');
+        Route::patch('/events/categories/{category}/update', 'update')->name('superadmin.events.categories.update');
+        Route::get('/events/categories/{category}/show', 'show')->name('superadmin.events.categories.show');
+        Route::delete('/events/categories/{category}/destroy', 'destroy')->name('superadmin.events.categories.destroy');
+    });
 
 
     // project management
@@ -45,7 +59,7 @@ Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(fun
             Route::get('/projects/create', 'create')->name('superadmin.projects.create');
             Route::post('/projects/create', 'store')->name('superadmin.projects.store');
             Route::get('/projects/{project}/show', 'show')->name('superadmin.projects.show');
-            Route::delete('/projects/{project}/destroy', 'destroy')->name('superadmin.projects.destroy')->withTrashed();; //Soft deletes (for trashed projects)
+            Route::delete('/projects/{project}/destroy', 'destroy')->name('superadmin.projects.destroy')->withTrashed(); //Soft deletes (for trashed projects)
             Route::get('/projects/{project}/edit', 'edit')->name('superadmin.projects.edit');
             Route::patch('/projects/{project}/update', 'update')->name('superadmin.projects.update');
             Route::delete('/projects/{project}/trash', 'trash')->name('superadmin.projects.trash'); //Soft deletes (for trashed projects)

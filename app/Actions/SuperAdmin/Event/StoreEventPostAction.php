@@ -2,30 +2,38 @@
 
 namespace App\Actions\SuperAdmin\Event;
 
-use App\Models\Event;
+use App\Models\Post;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class StoreEventPostAction
 {
     public function execute(Request $request): bool
     {
+        // dd($request->all());
         try {
             DB::beginTransaction();
 
             $attr = $request->validated();
-            $attr['event_category_id'] = $attr['category'];
-            unset($attr['category']);
+
+            $attr['subcategory_id'] = $attr['subcategory'];
+            unset($attr['subcategory']);
+            $attr['slug'] = Str::slug($request->title.'-'.uniqid());
+            $attr['category_id'] = 1; //1 is the category_id for events
+            $attr['author_id'] = Auth::user()->id;
+
+
             // dd($attr);
 
             // Then handle the image upload if present
-            if ($request->hasFile('image')) {
-                $attr['image'] = $request->file('image')->store('eventpost-photos', 'public');
+            if ($request->hasFile('cover_image')) {
+                $attr['cover_image'] = $request->file('cover_image')->store('eventpost-photos', 'public');
             }
 
-            Event::create($attr);
+            Post::create($attr);
             DB::commit();
             return true;
         } catch (\Throwable $th) {

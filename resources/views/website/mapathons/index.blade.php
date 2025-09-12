@@ -62,13 +62,13 @@
                         <div class="card-item">
                             <div class="row">
                                 <div class="col-xl-5">
-                                    <div class="card-bg" style="background-image: url({{ asset('storage/' . $mapathon->image) ?? asset('assets/img/contours.jpg') }});">
+                                    <div class="card-bg" style="background-image: url({{ asset('storage/' . $mapathon->cover_image) ?? asset('assets/img/contours.jpg') }});">
                                     </div>
                                 </div>
                                 <div class="col-xl-7 d-flex align-items-center">
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $mapathon->title }}</h4>
-                                        <p> @truncate($mapathon->description, 200) </p>
+                                        <p> @truncate($mapathon->content, 100) </p>
                                         <a href="{{ route('mapathons.show', $mapathon->id) }}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>

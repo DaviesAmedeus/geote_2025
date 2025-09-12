@@ -1,6 +1,4 @@
 <x-panel.dash>
-    <div class="container-fluid">
-             <x-panel.alerts />
         <div class="row dash-row">
             <div class="col-xl-4">
                 <div class="stats stats-primary">
@@ -51,7 +49,7 @@
             </div>
 
 
-              <div class="col-xl-4">
+            <div class="col-xl-4">
                 <div class="stats stats-success ">
                     <h3 class="stats-title"> Revenue </h3>
                     <div class="stats-content">
@@ -69,7 +67,7 @@
                 </div>
             </div>
 
-              <div class="col-xl-4">
+            <div class="col-xl-4">
                 <div class="stats stats-success ">
                     <h3 class="stats-title"> Revenue </h3>
                     <div class="stats-content">
@@ -87,8 +85,4 @@
                 </div>
             </div>
         </div>
-
-
-
-    </div>
 </x-panel.dash>

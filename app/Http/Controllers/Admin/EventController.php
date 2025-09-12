@@ -2,36 +2,47 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\f;
-use App\Models\Event;
-use Illuminate\Http\Request;
-use App\Models\EventCategory;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 use App\Actions\SuperAdmin\Event\StoreEventPostAction;
 use App\Actions\SuperAdmin\Event\UpdateEventPostAction;
 use App\Http\Requests\SuperAdmin\Event\StoreEventPostRequest;
 use App\Http\Requests\SuperAdmin\Event\UpdateEventPostRequest;
+use App\Models\Post;
+use App\Models\Subcategory;
+
 
 class EventController extends Controller
 {
 
-    public function index()
+
+    public function geosparks()
     {
-        $events = Event::with('eventCategory')->latest()->paginate(10);
-        return view('superadmin.events.index', [
-            'events' => $events
-        ]);
+        $events = Post::with('author', 'subcategory')
+            ->where('category_id', 1)
+            ->where('subcategory_id', 2)
+            ->latest()->paginate(10);
+
+        return view('superadmin.events.geosparks', compact('events'));
+
+        // NB: For now all events (Geospark & Mapathons) are viewed on the same page on admin panel. Later We will create a way to view each group separately
+    }
+
+      public function mapathons()
+    {
+        $events = Post::with('author', 'subcategory')
+            ->where('category_id', 1)->where('subcategory_id', 1)
+            ->latest()->paginate(10);
+
+        return view('superadmin.events.mapathons', compact('events'));
+
+        // NB: For now all events (Geospark & Mapathons) are viewed on the same page on admin panel. Later We will create a way to view each group separately
     }
 
     public function create()
     {
-        $eventCategories = EventCategory::where('status', 1)->get();
-        return view('superadmin.events.create', [
-            'eventCategories' => $eventCategories
-        ]);
+        $eventCategories = Subcategory::where('category_id',1)->get();
+        return view('superadmin.events.create', compact('eventCategories'));
     }
 
 
@@ -42,38 +53,34 @@ class EventController extends Controller
                 ->withInput()
                 ->with('error', 'Failed to create an event post. Please try again.');
         }
-        return redirect(route('superadmin.events.all'))->with('success', "Project created successfully.");
+
+        return redirect()->back()->with('success', "Event Post created successfully. Create another!");
     }
 
 
-    public function show(Event $event)
+    public function show(Post $event)
     {
         return response()->json([
-            'title'        => $event->title ?? 'No title',
-            'event'   => $event->eventCategory->name ?? 'No Category',
-            'description'  => $event->description ?? 'No description Available',
-            'image'        => $event->image ? "/storage/{$event->image}" : null,
-            'status'       => $event->status ? 'Enabled (Can be viewed on the website)' : 'Disabled (Can not be viewed on the website)',
-            'event_images'   => $event->event_images ?? 'No event images',
-            'created_at'   => optional($event->created_at)->format('d M Y') ?? 'Not set',
-            'updated_at'   => optional($event->updated_at)->format('d M Y') ?? 'Not set',
+            'title'               => $event->title ?? 'No title',
+            'event'               => $event->subcategory->name ?? 'No Category',
+            'content'             => $event->content ?? 'No Content Available',
+            'image'               => $event->cover_image ? "/storage/{$event->cover_image}" : null,
+            'status'              => $event->status,
+            'images_repository'   => $event->event_images ?? 'No Repository Link',
+            'created_at'          => optional($event->created_at)->format('d M Y') ?? 'Not set',
+            'updated_at'          => optional($event->updated_at)->format('d M Y') ?? 'Not set',
 
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Event $event)
+
+    public function edit(Post $event)
     {
-        $eventCategories = EventCategory::where('status', 1)->get();
-        return view('superadmin.events.edit', [
-            'event' => $event,
-            'eventCategories' => $eventCategories
-        ]);
+        $eventCategories = Subcategory::where('category_id',1)->get();
+        return view('superadmin.events.edit', compact('event', 'eventCategories'));
     }
 
-    function update(UpdateEventPostRequest $request, Event $event, UpdateEventPostAction $updateEventPostAction)
+    function update(UpdateEventPostRequest $request, Post $event, UpdateEventPostAction $updateEventPostAction)
     {
         if (!$updateEventPostAction->execute($request, $event)) {
             return redirect()->back()
@@ -84,33 +91,45 @@ class EventController extends Controller
     }
 
 
-     public function trash(Event $event)
+     public function trash(Post $event)
     {
         $event->delete();
         return redirect()->back()->with('success', "The Event Post have been moved to 'trash'!");;
     }
 
-    public function trashed()
+    public function trashedGeosparks()
     {
-        $trashedEvents = Event::with('eventCategory')->onlyTrashed()->latest()->paginate(10);
+        $trashedEvents = Post::with('author', 'subcategory')
+            ->where('category_id', 1)
+            ->where('subcategory_id', 2)
+            ->onlyTrashed()->latest()->paginate(10);
 
-        return view('superadmin.events.trashed', compact('trashedEvents'));
+        return view('superadmin.events.trashedgeosparks', compact('trashedEvents'));
+    }
+
+      public function trashedMapathons()
+    {
+        $trashedEvents = Post::with('author', 'subcategory')
+            ->where('category_id', 1)
+            ->where('subcategory_id', 1)
+            ->onlyTrashed()->latest()->paginate(10);
+
+        return view('superadmin.events.trashedmapathons', compact('trashedEvents'));
     }
 
 
-    public function restore(Event $event)
+
+    public function restore(Post $event)
     {
         if (!$event->trashed()) {
             return redirect()->back()->with('success', "The event is not trashed");
         }
-
         $event->restore();
-
         return redirect()->back()->with('success', "You have restored a event.");
     }
 
 
-    public function destroy(Event $event)
+    public function destroy(Post $event)
     {
         $event->forceDelete();
         return redirect()->back()->with('success', "The event have permanently deleted this event!");;

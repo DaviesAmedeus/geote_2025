@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -9,12 +10,14 @@ class EventController extends Controller
 {
      public function mapathonsIndex()
     {
-        $eventCategory = 2;
-        $mapathons = Event::with('eventCategory')->where('status', 1)->where('event_category_id', $eventCategory)->latest()->paginate(4);
+        $mapathons = Post::with('author', 'subcategory')
+            ->where('category_id', 1)->where('subcategory_id', 1)
+            ->latest()->paginate(4);
+
         return view('website.mapathons.index', compact('mapathons'));
     }
 
-    public function mapathonsShow(Event $mapathon)
+    public function mapathonsShow(Post $mapathon)
     {
         return view('website.mapathons.show', compact('mapathon'));
     }
@@ -23,12 +26,15 @@ class EventController extends Controller
 
        public function geosparksIndex()
     {
-        $eventCategory = 1;
-        $geosparks = Event::with('eventCategory')->where('status', 1)->where('event_category_id', $eventCategory)->latest()->paginate(4);
+            $geosparks = Post::with('author', 'subcategory')
+            ->where('category_id', 1)
+            ->where('subcategory_id', 2)
+            ->latest()->paginate(4);
+
         return view('website.geosparks.index', compact('geosparks'));
     }
 
-    public function geosparksShow(Event $geospark)
+    public function geosparksShow(Post $geospark)
     {
         return view('website.geosparks.show', compact('geospark'));
     }

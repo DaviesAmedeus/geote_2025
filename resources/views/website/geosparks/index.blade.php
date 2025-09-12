@@ -90,7 +90,7 @@
 
 
 
-    <section id="constructions" class="constructions p-0">
+    <section id="constructions" class="constructions pb-4">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
@@ -107,13 +107,13 @@
                         <div class="card-item">
                             <div class="row">
                                 <div class="col-xl-5">
-                                    <div class="card-bg" style="background-image: url({{ asset('storage/' . $geospark->image) ?? asset('assets/img/contours.jpg') }});">
+                                    <div class="card-bg" style="background-image: url({{ asset('storage/' . $geospark->cover_image) ?? asset('assets/img/contours.jpg') }});">
                                     </div>
                                 </div>
                                 <div class="col-xl-7 d-flex align-items-center">
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $geospark->title }}</h4>
-                                        <p> @truncate($geospark->description, 200) </p>
+                                        <p> @truncate($geospark->content, 100) </p>
                                         <a href="{{ route('geosparks.show', $geospark->id) }}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
 
                     @empty
                     <div>
-                        <p class="text-center">(Nothing for now! GeoTE Team is working on something cool for you. Please be patient!)</p>
+                        <p class="text-center">(Latest posts from Geosparks will be displayed here!)</p>
                     </div>
 
                 @endforelse

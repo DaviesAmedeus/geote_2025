@@ -1,20 +1,12 @@
 <x-panel.dash>
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1 class="dash-title">Create Event Post</h1>
-            </div>
 
-            <div class="col-md-6 me-3" style="text-align: end">
-                <strong> <a href="{{ route('superadmin.events.all') }}">projects</a>/create</strong>
-            </div>
-        </div>
-
-        <x-panel.alerts />
-
-
+    <x-slot name="breadcrumb">
+        <x-panel.breadcrumb pageTitle='Create Event Post'></x-panel.breadcrumb>
+    </x-slot>
+    
         <div class="row">
-            <form action="{{ route('superadmin.events.store') }}" method="post" class="col-xl-12" enctype="multipart/form-data">
+            <form action="{{ route('superadmin.events.store') }}" method="post" class="col-xl-12"
+                enctype="multipart/form-data">
                 @csrf
 
                 <div class="card-body bg-light border ">
@@ -25,7 +17,7 @@
                                 <div class="spur-card-icon">
                                     <i class="fas fa-chart-bar"></i>
                                 </div>
-                                <div class="spur-card-title"> Event Post Information</div>
+                                <div class="spur-card-title"> Fill Event Post Information</div>
                             </div>
                             <div class="card-body ">
 
@@ -49,7 +41,9 @@
                                             <label for="cover_photo" class="d-block cover-photo-wrapper"
                                                 style="cursor: pointer;">
                                                 <!-- Cover Image Preview -->
-                                                <img id="coverPreview" src="" class="img-fluid border mb-2"
+                                                <img id="coverPreview"
+                                                    src=""
+                                                    class="img-fluid border mb-2"
                                                     style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
 
                                                 <!-- Hover Overlay -->
@@ -60,13 +54,13 @@
                                             </label>
 
                                             <!-- Hidden File Input -->
-                                            <input type="file" class="d-none" id="cover_photo" name="image"
-                                                accept="image/*">
+                                            <input type="file" class="d-none" id="cover_photo" name="cover_image"
+                                                accept="cover_image/*">
 
                                             <small class="form-text text-muted d-block">
                                                 Recommended size: 1080x500 pixels (Rectangle). Max file size: 2MB.
                                             </small>
-                                            @error('image')
+                                            @error('cover_image')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -74,28 +68,28 @@
                                 </div>
 
 
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Event Description</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="A Litle about the event......."
-                                        rows="7" name="description">{{ old('description') }}</textarea>
-                                    @error('description')
+                                        rows="7" name="content">{{ old('content') }}</textarea>
+                                    @error('content')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
 
 
-                              <div class="form-row">
-                                      <div class="form-group col-md-12">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
                                         <label for="exampleFormControlSelect1">Image directory link</label>
-                                         <input type="text" class="form-control" id="event_images"
-                                            placeholder="Eg: https://drive.google.com/drive/....folder" value="{{ old('event_images') }}"
-                                            name="event_images">
-                                        @error('category')
+                                        <input type="text" class="form-control" id="images_repository"
+                                            placeholder="Eg: https://drive.google.com/drive/....folder"
+                                            value="{{ old('images_repository') }}" name="images_repository">
+                                        @error('images_repository')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-                              </div>
+                                </div>
 
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
@@ -103,8 +97,10 @@
                                         <select class="form-control" id="exampleFormControlSelect1" name="status">
                                             <option class="text-muted">--- Enable/Disable --</option>
 
-                                            <option value="1">Enable</option>
-                                            <option value="0">Disable</option>
+                                            <option value="published">Published</option>
+                                            <option value="archived">Archived</option>
+                                            <option value="draft">Draft</option>
+
                                         </select>
                                         @error('status')
                                             <div class="text-danger">{{ $message }}</div>
@@ -113,9 +109,9 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Category</label>
-                                        <select class="form-control" id="exampleFormControlSelect1" name="category">
-                                            @foreach ($eventCategories as $category )
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="subcategory">
+                                            @foreach ($eventCategories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
 
 
@@ -142,15 +138,15 @@
                     </div>
                 </div>
 
-             @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
 
             </form>
@@ -161,7 +157,7 @@
 
 
 
-    </div>
+
 
 
 

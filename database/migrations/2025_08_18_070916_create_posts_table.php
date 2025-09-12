@@ -43,6 +43,7 @@ return new class extends Migration
             $table->string('seo_title')->nullable();
             $table->string('seo_description')->nullable();
             $table->unsignedBigInteger('views_count')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

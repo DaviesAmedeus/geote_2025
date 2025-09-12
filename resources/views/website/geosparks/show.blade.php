@@ -23,7 +23,7 @@
 
                 <div class="col-lg-4">
                     <div class="services-list">
-                        <a href="{{ $geospark->event_images }}" target="_blank"
+                        <a href="{{ $geospark->images_repository }}" target="_blank"
                             class="active btn btn-outline-success text-light"><span class="pe-2"><i
                                     class="bi bi-image"></i></span>Event Images (Click here!) </a>
 
@@ -35,7 +35,7 @@
                         empowers students to master geospatial skills that make real-world impact..</p>
                     <p class="text-muted"> <b>For more information on how to support reach us via:</b> </p>
                     <ul>
-                        <li><i class="bi bi-whatsapp"></i> <span><a href="⛔https://wa.me/255688364134" target="_blank">
+                        <li><i class="bi bi-whatsapp"></i> <span><a href="https://wa.me/255688364134" target="_blank">
                                     <b>+255 688 364 134</b> (click here)</a></span></li>
                         <li><i class="bi bi-envelope"></i><span>info@geote.org</span></li>
                         <li><i class="bi bi-telephone"></i> <span>+255 762 780 170</span></li>
@@ -44,10 +44,10 @@
                 </div>
 
                 <div class="col-lg-8">
-                    <img src="{{ asset('storage/' . $geospark->image) ?? asset('assets/img/contours.jpg') }}"
+                    <img src="{{ asset('storage/' . $geospark->cover_image) ?? asset('assets/img/contours.jpg') }}"
                         alt="" class="img-fluid services-img">
                     <h3>{{ $geospark->title }}</h3>
-                    <p>{!! nl2br(e($geospark->description)) !!}</p>
+                    <p>{!! nl2br(e($geospark->content)) !!}</p>
 
 
                 </div>
