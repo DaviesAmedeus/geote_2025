@@ -3,7 +3,7 @@
 
 
     <x-slot name="breadcrumb">
-        <x-panel.breadcrumb pageTitle='Geosparks Posts'>
+        <x-panel.breadcrumb pageTitle='All Event posts'>
             <x-panel.item-creator btnTitle="Create" :button=false href="{{ route('superadmin.events.create') }}" />
         </x-panel.breadcrumb>
     </x-slot>

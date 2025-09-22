@@ -25,21 +25,13 @@ class UpdateEventPostRequest extends FormRequest
         return [
                'title' => ['required', 'string', 'max:100'],
             'content' => ['nullable', 'string', new MaxWords(300)],
-            'cover_image' =>  [
-                'nullable',
-                'image',
-                'mimes:jpeg,png,jpg,gif,webp',
-                'max:2048',
-                'dimensions:width=1080,height=500' // At least 1080×500 (but not exact)
-            ],
-
+            'cover_image' =>  ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048', 'dimensions:width=1080,height=500'], // At least 1080×500 (but not exact)
             'images_repository' => [
                 'nullable',
                 'url',
                 'starts_with:https://',
                 // 'regex:/^https:\/\/drive\.google\.com\/drive\/folders\/.+$/',
             ],
-            
             'updated_by' => ['nullable'],
             'subcategory' => ['required'],
             'status' => ['required',  'in:draft,published,archived'],

@@ -123,8 +123,8 @@
                     <div class="col-lg-2 col-md-3 footer-links">
                         <h4>Programs</h4>
                         <ul>
-                            <li><a href="{{ route('fpt.index') }}">FPT</a></li>
-                            <li><a href="{{ route('shortcourses.index') }}">GIS Short Course</a></li>
+                            <li><a href="{{ route('fpt') }}">FPT</a></li>
+                            <li><a href="{{ route('shortcourses') }}">GIS Short Course</a></li>
                             <li><a href="{{ route('mentorship') }}">GIS Mentorship</a></li>
 
 

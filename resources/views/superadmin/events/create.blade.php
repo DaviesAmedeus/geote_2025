@@ -3,7 +3,7 @@
     <x-slot name="breadcrumb">
         <x-panel.breadcrumb pageTitle='Create Event Post'></x-panel.breadcrumb>
     </x-slot>
-
+    
         <div class="row">
             <form action="{{ route('superadmin.events.store') }}" method="post" class="col-xl-12"
                 enctype="multipart/form-data">

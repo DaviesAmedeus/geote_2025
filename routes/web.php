@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisteredUserController;
@@ -11,6 +10,8 @@ use App\Http\Controllers\RegisteredUserController;
 Route::view('/',  'website.index')->name('home');
 Route::view('/about', 'website.about')->name('about');
 
+Route::view('/fpt',  'website.fpt')->name('fpt');
+Route::view('/shortcourses',  'website.shortcourses')->name('shortcourses');
 Route::view('/mentorship',  'website.mentorship')->name('mentorship');
 Route::view('/membership',  'website.membership')->name('membership');
 Route::view('/donate',  'website.donate')->name('donate');
@@ -24,18 +25,6 @@ Route::controller(EventController::class)->group(function () {
     // Geosparks
     Route::get('/geosparks', 'geosparksIndex')->name('geosparks.index');
     Route::get('/geosparks/{geospark}/show', 'geosparksShow')->name('geosparks.show');
-});
-
-
-Route::controller(ProgramController::class)->group(function () {
-    // FPT
-    Route::get('/fpt', 'fpt')->name('fpt.index');
-    Route::get('/fpt/{fpt:slug}', 'fptShow')->name('fpt.show');
-
-    // Shortcourses
-    Route::get('/shortcourses', 'shortcourses')->name('shortcourses.index');
-    Route::get('/shortcourses/{shortcourse:slug}/show', 'shortcourseShow')->name('shortcourses.show');
-
 });
 
 
