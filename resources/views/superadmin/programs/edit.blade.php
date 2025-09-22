@@ -1,13 +1,14 @@
 <x-panel.dash>
 
     <x-slot name="breadcrumb">
-        <x-panel.breadcrumb pageTitle='Create Event Post'></x-panel.breadcrumb>
+        <x-panel.breadcrumb pageTitle='Create Program post'></x-panel.breadcrumb>
     </x-slot>
 
         <div class="row">
-            <form action="{{ route('superadmin.events.store') }}" method="post" class="col-xl-12"
+            <form action="{{ route('superadmin.programs.update', $program->slug) }}" method="post" class="col-xl-12"
                 enctype="multipart/form-data">
                 @csrf
+                @method('PATCH')
 
                 <div class="card-body bg-light border ">
 
@@ -17,7 +18,7 @@
                                 <div class="spur-card-icon">
                                     <i class="fas fa-chart-bar"></i>
                                 </div>
-                                <div class="spur-card-title"> Fill Event Post Information</div>
+                                <div class="spur-card-title"> Fill Program Post Information</div>
                             </div>
                             <div class="card-body ">
 
@@ -25,7 +26,7 @@
                                     <div class="form-group">
                                         <label for="name">Title <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="title"
-                                            placeholder="Enter title for event post..." value="{{ old('title') }}"
+                                            placeholder="Enter title for this post..." value="{{ old('title', $program->title) }}"
                                             name="title">
                                         @error('title')
                                             <div class="text-danger">{{ $message }}</div>
@@ -42,7 +43,7 @@
                                                 style="cursor: pointer;">
                                                 <!-- Cover Image Preview -->
                                                 <img id="coverPreview"
-                                                    src=""
+                                                    src="{{ asset('storage/' . $program->cover_image) ?? asset('imgs/demo/profile.jpg') }}"
                                                     class="img-fluid border mb-2"
                                                     style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
 
@@ -67,11 +68,20 @@
                                     </div>
                                 </div>
 
+                                 <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Description</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Describe what this post is about in few words...."
+                                        rows="3" name="excerpt">{{ old('excerpt', $program->excerpt) }}</textarea>
+                                    @error('excerpt')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Event Description</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="A Litle about the event......."
-                                        rows="7" name="content">{{ old('content') }}</textarea>
+                                    <label for="exampleFormControlTextarea1">Content</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Say more about this post..."
+                                        rows="10" name="content">{{ old('content', $program->content) }}</textarea>
                                     @error('content')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -84,7 +94,7 @@
                                         <label for="exampleFormControlSelect1">Image directory link</label>
                                         <input type="text" class="form-control" id="images_repository"
                                             placeholder="Eg: https://drive.google.com/drive/....folder"
-                                            value="{{ old('images_repository') }}" name="images_repository">
+                                            value="{{ old('images_repository', $program->images_repository) }}" name="images_repository">
                                         @error('images_repository')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -95,12 +105,17 @@
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Status</label>
                                         <select class="form-control" id="exampleFormControlSelect1" name="status">
-                                            <option class="text-muted">--- Enable/Disable --</option>
+                                           <option class="text-muted">--- Enable/Disable --</option>
 
-                                            <option value="published">Published</option>
-                                            <option value="archived">Archived</option>
-                                            <option value="draft">Draft</option>
-
+                                            <option value="published"
+                                                {{ isset($program->status) && $program->status == 'published' ? 'selected' : '' }}>
+                                                Published</option>
+                                            <option value="archived"
+                                                {{ isset($program->status) && $program->status == 'archived' ? 'selected' : '' }}>
+                                                Archive</option>
+                                                <option value="draft"
+                                                {{ isset($program->status) && $program->status == 'draft' ? 'selected' : '' }}>
+                                                Draft</option>
                                         </select>
                                         @error('status')
                                             <div class="text-danger">{{ $message }}</div>
@@ -110,8 +125,14 @@
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Category</label>
                                         <select class="form-control" id="exampleFormControlSelect1" name="subcategory">
-                                            @foreach ($eventCategories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+
+
+
+
+                                            @foreach ($programCategories as $category)
+                                                <option value="{{ $category->id }}"
+                                                    {{ isset($program->subcategory->id) && $program->subcategory->id === $category->id ? 'selected' : '' }}>
+                                                    {{ $category->name }}</option>
                                             @endforeach
 
 
@@ -133,8 +154,8 @@
                     </div>
 
                     <div class="mt-3 col-6 mx-auto">
-                        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block mb-1">Submit
-                            Event Post</button>
+                        <button type="submit" class="btn btn-outline-primary btn-lg btn-block mb-1">Submit
+                            program Post</button>
                     </div>
                 </div>
 

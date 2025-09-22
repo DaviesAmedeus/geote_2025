@@ -1,40 +1,44 @@
 <x-panel.dash>
 
 
-        <x-slot name="breadcrumb">
-            <x-panel.breadcrumb pageTitle='Trashed Geospark Posts'></x-panel.breadcrumb>
-        </x-slot>
+    <x-slot name="breadcrumb">
+        <x-panel.breadcrumb pageTitle='Trashed Geospark Posts'>
+            <x-panel.all-items btnTitle="Geosparks Posts" href="{{ route('superadmin.events.geosparks') }}" />
+        </x-panel.breadcrumb>
+    </x-slot>
 
 
 
 
 
-        <div class="row">
 
-            <x-panel.table-wrap>
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Event type</th>
-                        <th scope="col">Creator</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Trashed at</th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($trashedEvents as $trash)
-                        <a href="/">
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('storage/' . $trash->image) ?? asset('assets/img/contours.jpg') }}"
-                                        alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
-                                </td>
-                                <th scope="row">{{ $trash->title }}</th>
-                                <td>{{ $trash->subcategory?->name }}</td>
-                                <td>{{ $trash->author?->name }}</td>
-                                <td>
+    <div class="row">
+
+        <x-panel.table-wrap>
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Event type</th>
+                    <th scope="col">Creator</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Trashed at</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($trashedEvents as $trash)
+                    <a href="/">
+                        <tr>
+                            <td>
+                                <img src="{{ asset('storage/' . $trash->image) ?? asset('assets/img/contours.jpg') }}"
+                                    alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
+                            </td>
+                            <th scope="row">{{ $trash->title }}</th>
+                            <td>{{ $trash->subcategory?->name }}</td>
+                            <td>{{ $trash->author?->name }}</td>
+                            <td>
                                 @if ($trash->status === 'published')
                                     <span class="badge rounded badge-success px-3 py-1">Published</span>
                                 @endif
@@ -46,61 +50,60 @@
                                     <span class="badge rounded badge-warning  px-3 py-1">Archived</span>
                                 @endif
                             </td>
-                                <td>{{ $trash->deleted_at ? $trash->deleted_at->format('F jS, Y') : '--' }}</td>
-                                <td>
-                                    @if ($trash->status === 1)
-                                        <span class="badge rounded badge-success px-3 py-1">Enabled</span>
-                                    @elseif ($trash->status === 0)
-                                        <span class="badge rounded badge-secondary  px-3 py-1">Disabled</span>
-                                    @endif
-                                </td>
-                                <td class="">
-                                    <div class="d-flex pb-3">
+                            <td>{{ $trash->deleted_at ? $trash->deleted_at->format('F jS, Y') : '--' }}</td>
+                            <td>
+                                @if ($trash->status === 1)
+                                    <span class="badge rounded badge-success px-3 py-1">Enabled</span>
+                                @elseif ($trash->status === 0)
+                                    <span class="badge rounded badge-secondary  px-3 py-1">Disabled</span>
+                                @endif
+                            </td>
+                            <td class="">
+                                <div class="d-flex pb-3">
 
 
 
-                                        <form action="{{ route('superadmin.events.restore', $trash->id) }}"
-                                            method="post">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button type="submit" class="btn btn-secondary mr-3"><i
-                                                    class="fas fa-undo"></i></button>
-                                        </form>
+                                    <form action="{{ route('superadmin.events.restore', $trash->id) }}" method="post">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="btn btn-secondary mr-3"><i
+                                                class="fas fa-undo"></i></button>
+                                    </form>
 
-                                        <button class="btn mr-3 btn-danger view-danger"
-                                            data-delete-id="{{ $trash->id }}" data-bs-toggle="modal"
-                                            data-bs-target="#deleteModal">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                                    <button class="btn mr-3 btn-danger view-danger" data-delete-id="{{ $trash->id }}"
+                                        data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
 
-                        </a>
-                    @empty
-                        <a href="/">
-                            <tr>
-                                <td class="text-center py-3" colspan="100%"> <strong>--- No Trashed Geosparks posts! ---</strong>
-                                </td>
-                            </tr>
+                    </a>
+                @empty
+                    <a href="/">
+                        <tr>
+                            <td class="text-center py-3" colspan="100%"> <strong>--- No Trashed Geosparks posts!
+                                    ---</strong>
+                            </td>
+                        </tr>
 
-                        </a>
-                    @endforelse
-
+                    </a>
+                @endforelse
 
 
 
-                </tbody>
-            </x-panel.table-wrap>
+
+            </tbody>
+        </x-panel.table-wrap>
 
 
 
-            <div class="col">
-                {{ $trashedEvents->links() }}
-            </div>
-
-
+        <div class="col">
+            {{ $trashedEvents->links() }}
         </div>
+
+
+    </div>
 
 
 

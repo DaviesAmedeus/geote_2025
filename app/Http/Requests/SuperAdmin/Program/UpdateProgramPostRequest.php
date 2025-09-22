@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\SuperAdmin\Event;
+namespace App\Http\Requests\SuperAdmin\Program;
 
 use App\Rules\MaxWords;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateEventPostRequest extends FormRequest
+class UpdateProgramPostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,10 @@ class UpdateEventPostRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-               'title' => ['required', 'string', 'max:100'],
-            'content' => ['nullable', 'string', new MaxWords(300)],
+       return [
+            'title' => ['required', 'string', 'max:100'],
+            'excerpt' => ['nullable', 'string', new MaxWords(100)],
+            'content' => ['nullable', 'string', new MaxWords(500)],
             'cover_image' =>  [
                 'nullable',
                 'image',
@@ -39,10 +40,14 @@ class UpdateEventPostRequest extends FormRequest
                 'starts_with:https://',
                 // 'regex:/^https:\/\/drive\.google\.com\/drive\/folders\/.+$/',
             ],
-            
             'updated_by' => ['nullable'],
             'subcategory' => ['required'],
-            'status' => ['required',  'in:draft,published,archived'],
+            'status' => [
+                'required',
+                'in:draft,published,archived'
+            ],
+
+
         ];
     }
 }
