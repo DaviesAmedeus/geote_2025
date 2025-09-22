@@ -39,7 +39,7 @@ It directly supports GeoTE’s mission to make the world a better place through 
             </div><!-- End Icon Box -->
 
             <blockquote>
-             <p class="pt-4">"Your support today shapes the sustainable world of tomorrow." <span class="text-muted">Erick Tamba Mnyali (Co - Founder & Director)</span></p>
+             <p class="pt-4">"Your support today shapes the sustainable world of tomorrow." <span class="text-muted">~Erick Tamba Mnyali (Co - Founder & Director)</span></p>
              <p></p>
 
             </blockquote>
