@@ -24,24 +24,21 @@ class EventController extends Controller
             ->latest()->paginate(10);
 
         return view('superadmin.events.geosparks', compact('events'));
-
-        // NB: For now all events (Geospark & Mapathons) are viewed on the same page on admin panel. Later We will create a way to view each group separately
     }
 
-      public function mapathons()
+    public function mapathons()
     {
         $events = Post::with('author', 'subcategory')
-            ->where('category_id', 1)->where('subcategory_id', 1)
+            ->where('category_id', 1)
+            ->where('subcategory_id', 1)
             ->latest()->paginate(10);
 
         return view('superadmin.events.mapathons', compact('events'));
-
-        // NB: For now all events (Geospark & Mapathons) are viewed on the same page on admin panel. Later We will create a way to view each group separately
     }
 
     public function create()
     {
-        $eventCategories = Subcategory::where('category_id',1)->get();
+        $eventCategories = Subcategory::where('category_id', 1)->get();
         return view('superadmin.events.create', compact('eventCategories'));
     }
 
@@ -76,7 +73,7 @@ class EventController extends Controller
 
     public function edit(Post $event)
     {
-        $eventCategories = Subcategory::where('category_id',1)->get();
+        $eventCategories = Subcategory::where('category_id', 1)->get();
         return view('superadmin.events.edit', compact('event', 'eventCategories'));
     }
 
@@ -91,7 +88,7 @@ class EventController extends Controller
     }
 
 
-     public function trash(Post $event)
+    public function trash(Post $event)
     {
         $event->delete();
         return redirect()->back()->with('success', "The Event Post have been moved to 'trash'!");;
@@ -102,17 +99,19 @@ class EventController extends Controller
         $trashedEvents = Post::with('author', 'subcategory')
             ->where('category_id', 1)
             ->where('subcategory_id', 2)
-            ->onlyTrashed()->latest()->paginate(10);
+            ->onlyTrashed()
+            ->latest()->paginate(10);
 
         return view('superadmin.events.trashedgeosparks', compact('trashedEvents'));
     }
 
-      public function trashedMapathons()
+    public function trashedMapathons()
     {
         $trashedEvents = Post::with('author', 'subcategory')
             ->where('category_id', 1)
             ->where('subcategory_id', 1)
-            ->onlyTrashed()->latest()->paginate(10);
+            ->onlyTrashed()
+            ->latest()->paginate(10);
 
         return view('superadmin.events.trashedmapathons', compact('trashedEvents'));
     }

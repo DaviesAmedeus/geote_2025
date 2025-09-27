@@ -1,11 +1,11 @@
 <x-panel.dash>
 
     <x-slot name="breadcrumb">
-        <x-panel.breadcrumb pageTitle='Create Event Post'></x-panel.breadcrumb>
+        <x-panel.breadcrumb pageTitle='Create Program post'></x-panel.breadcrumb>
     </x-slot>
 
         <div class="row">
-            <form action="{{ route('superadmin.events.store') }}" method="post" class="col-xl-12"
+            <form action="{{ route('superadmin.programs.store') }}" method="post" class="col-xl-12"
                 enctype="multipart/form-data">
                 @csrf
 
@@ -17,7 +17,7 @@
                                 <div class="spur-card-icon">
                                     <i class="fas fa-chart-bar"></i>
                                 </div>
-                                <div class="spur-card-title"> Fill Event Post Information</div>
+                                <div class="spur-card-title"> Fill Program Post Information</div>
                             </div>
                             <div class="card-body ">
 
@@ -25,7 +25,7 @@
                                     <div class="form-group">
                                         <label for="name">Title <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="title"
-                                            placeholder="Enter title for event post..." value="{{ old('title') }}"
+                                            placeholder="Enter title for this post..." value="{{ old('title') }}"
                                             name="title">
                                         @error('title')
                                             <div class="text-danger">{{ $message }}</div>
@@ -67,11 +67,20 @@
                                     </div>
                                 </div>
 
+                                 <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Description</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Describe what this post is about in few words...."
+                                        rows="3" name="excerpt">{{ old('excerpt') }}</textarea>
+                                    @error('excerpt')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Event Description</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="A Litle about the event......."
-                                        rows="7" name="content">{{ old('content') }}</textarea>
+                                    <label for="exampleFormControlTextarea1">Content</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Say more about this post..."
+                                        rows="10" name="content">{{ old('content') }}</textarea>
                                     @error('content')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -110,7 +119,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Category</label>
                                         <select class="form-control" id="exampleFormControlSelect1" name="subcategory">
-                                            @foreach ($eventCategories as $category)
+                                            @foreach ($programCategories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
 
@@ -133,7 +142,7 @@
                     </div>
 
                     <div class="mt-3 col-6 mx-auto">
-                        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block mb-1">Submit
+                        <button type="submit" class="btn btn-outline-primary btn-lg btn-block mb-1">Submit
                             Event Post</button>
                     </div>
                 </div>

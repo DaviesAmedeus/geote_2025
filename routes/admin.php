@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\OverViewController;
 use App\Http\Controllers\Admin\EventCategoryController;
+use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\UserManagementController;
 
 Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(function () {
@@ -23,10 +24,10 @@ Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(fun
 
 
 
-    // Event management
+    // Event Posts management
     Route::controller(EventController::class)->group(function () {
-        Route::get('/events/all/geosparks', 'geosparks')->name('superadmin.events.all.geosparks');
-        Route::get('/events/all/mapathons', 'mapathons')->name('superadmin.events.all.mapathons');
+        Route::get('/events/geosparks', 'geosparks')->name('superadmin.events.geosparks');
+        Route::get('/events/mapathons', 'mapathons')->name('superadmin.events.mapathons');
 
         Route::get('/events/create', 'create')->name('superadmin.events.create');
         Route::post('/events/create', 'store')->name('superadmin.events.store');
@@ -41,7 +42,29 @@ Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(fun
         Route::patch('/events/{event}/restore', 'restore')->name('superadmin.events.restore')->withTrashed(); //Restore trashed projects
 
     });
-    
+
+
+     // Program Posts management
+    Route::controller(ProgramController::class)->group(function () {
+        Route::get('/programs/fpts', 'fpts')->name('superadmin.programs.fpts');
+        Route::get('/programs/shortcourses', 'shortcourses')->name('superadmin.programs.shortcourses');
+
+        Route::get('/programs/create', 'create')->name('superadmin.programs.create');
+        Route::post('/programs/create', 'store')->name('superadmin.programs.store');
+        Route::get('/programs/{program:slug}/show', 'show')->name('superadmin.programs.show');
+        Route::get('/programs/{program:slug}/edit', 'edit')->name('superadmin.programs.edit');
+        Route::patch('/programs/{program:slug}/update', 'update')->name('superadmin.programs.update');
+
+        Route::delete('/programs/{program:slug}/trash', 'trash')->name('superadmin.programs.trash'); //Soft deletes (for trashed programs)
+
+        Route::get('/programs/trashed/fpts', 'trashedFpts')->name('superadmin.programs.trashed.trashedFpts');
+        Route::get('/programs/trashed/shortcourses', 'trashedShortcourses')->name('superadmin.programs.trashed.trashedShortcourses');
+
+        Route::delete('/programs/{program:slug}/destroy', 'destroy')->name('superadmin.programs.destroy')->withTrashed();; //Soft deletes (for trashed events)
+        Route::patch('/programs/{program:slug}/restore', 'restore')->name('superadmin.programs.restore')->withTrashed(); //Restore trashed projects
+
+    });
+
     //Event categories
     Route::controller(EventCategoryController::class)->group(function () {
         Route::get('/events/categories', 'index')->name('superadmin.events.categories');
