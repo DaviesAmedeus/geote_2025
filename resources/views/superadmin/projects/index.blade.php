@@ -1,97 +1,105 @@
 <x-panel.dash>
-    <div class="container-fluid">
-        <div class="row align-items-center pr-3">
-            <div class="col-md-6">
-                <h1 class="dash-title">All Projects</h1>
-            </div>
 
-            <div class="col-md-6 me-3" style="text-align: end">
-                <strong> projects<a href="/super-admin/projects/create">/create</a></strong>
-            </div>
+
+
+
+    <x-slot name="breadcrumb">
+        <x-panel.breadcrumb pageTitle='Project posts' icon='far fa-list-alt'>
+            <x-panel.item-creator btnTitle="Create" :button=false href="{{ route('superadmin.projects.create') }}" />
+        </x-panel.breadcrumb>
+    </x-slot>
+
+
+
+
+
+
+
+    <div class="row">
+
+        <x-panel.table-wrap>
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+
+                    <th scope="col">Title</th>
+                    <th scope="col">Creator</th>
+                    <th scope="col">Created_at</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @forelse ($projects as $project)
+                    <a href="/">
+                        <tr>
+                            <td>
+                                <img src="{{ asset('storage/' . $project->image) ?? asset('assets/img/contours.jpg') }}"
+                                    alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
+                            </td>
+                            <th scope="row">{{ $project->title }}</th>
+                            <td>{{ $project->user?->name }}</td>
+                            <td>{{ $project->created_at ? $project->created_at->format('F jS, Y') : '--' }}</td>
+                            <td>
+                                @if ($project->status === 'completed')
+                                    <span class="badge rounded badge-success px-3 py-1">{{ $project->status }}</span>
+                                @elseif ($project->status === 'ongoing')
+                                    <span class="badge rounded badge-warning  px-3 py-1">{{ $project->status }}</span>
+                                @elseif ($project->status === 'pending')
+                                    <span class="badge rounded badge-secondary px-3 py-1">{{ $project->status }}</span>
+                                @endif
+                            </td>
+                            <td class="">
+                                <div class="d-flex pb-3">
+                                    <button class="btn mr-3 btn-primary view-project"
+                                        data-project-id="{{ $project->id }}" data-bs-toggle="modal"
+                                        data-bs-target="#projectModal">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <a href="/super-admin/projects/{{ $project->id }}/edit"
+                                        class="btn btn-secondary mr-3"><i class="fas fa-pen"></i></a>
+                                    <form action="/super-admin/projects/{{ $project->id }}/trash" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger"><i
+                                                class="fas fa-trash"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </a>
+                @empty
+                    <a href="/">
+                        <tr>
+                            <td class="text-center py-3" colspan="100%"> <strong>--- No Project posts! ---</strong>
+                            </td>
+                        </tr>
+
+                    </a>
+                    
+                @endforelse
+
+
+
+
+
+
+            </tbody>
+        </x-panel.table-wrap>
+
+
+
+        <div class="col">
+            {{ $projects->links() }}
         </div>
 
-
-        <x-panel.alerts />
-
-
-
-        <div class="row">
-
-            <x-panel.table-wrap>
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-
-                        <th scope="col">Title</th>
-                        <th scope="col">Creator</th>
-                        <th scope="col">Created_at</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Actions</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-
-                    @foreach ($projects as $project)
-                        <a href="/">
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('storage/' . $project->image) ?? asset('assets/img/contours.jpg') }}"
-                                        alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
-                                </td>
-                                <th scope="row">{{ $project->title }}</th>
-                                <td>{{ $project->user?->name }}</td>
-                                <td>{{ $project->created_at ? $project->created_at->format('F jS, Y') : '--' }}</td>
-                                <td>
-                                    @if ($project->status === 'completed')
-                                        <span
-                                            class="badge rounded badge-success px-3 py-1">{{ $project->status }}</span>
-                                    @elseif ($project->status === 'ongoing')
-                                        <span
-                                            class="badge rounded badge-warning  px-3 py-1">{{ $project->status }}</span>
-                                    @elseif ($project->status === 'pending')
-                                        <span
-                                            class="badge rounded badge-secondary px-3 py-1">{{ $project->status }}</span>
-                                    @endif
-                                </td>
-                                <td class="">
-                                    <div class="d-flex pb-3">
-                                        <button class="btn mr-3 btn-primary view-project"
-                                            data-project-id="{{ $project->id }}" data-bs-toggle="modal"
-                                            data-bs-target="#projectModal">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <a href="/super-admin/projects/{{ $project->id }}/edit"
-                                            class="btn btn-secondary mr-3"><i class="fas fa-pen"></i></a>
-                                        <form action="/super-admin/projects/{{ $project->id }}/trash" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"><i
-                                                    class="fas fa-trash"></i></button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-
-                        </a>
-                    @endforeach
-
-
-
-
-                </tbody>
-            </x-panel.table-wrap>
-
-
-
-            <div class="col">
-                {{ $projects->links() }}
-            </div>
-
-
-        </div>
 
     </div>
+
+
 
 
 
@@ -185,11 +193,11 @@
                             <h4><strong>Project achievements</strong>:</h4>
                             <ul class="list-unstyled">
                                             ${achievements.map(achievement => `
-                                                                                        <li class="mb-2">
-                                                                                            <i class="fas fa-check-circle text-success me-2"></i>
-                                                                                            ${achievement}
-                                                                                        </li>
-                                                                                    `).join('')}
+                                                                                                                <li class="mb-2">
+                                                                                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                                                                                    ${achievement}
+                                                                                                                </li>
+                                                                                                            `).join('')}
                                         </ul>
                         </div>
                     </div>
@@ -251,7 +259,7 @@
                       <div class="row">
                         <div class="for-group col-md-12">
                             ${data.image ? `<img id="coverPreview" src="${data.image}" class="img-fluid border mb-2"
-                                                                        style="width: 100%; height: 500px; object-fit: fill; border-radius: 8px;">` : ''}
+                                                                                                style="width: 100%; height: 500px; object-fit: fill; border-radius: 8px;">` : ''}
 
                         </div>
                     </div>

@@ -61,17 +61,18 @@
         <div class="dash-nav-dropdown-menu" style="{{ $eventsActive ? 'display: block;' : '' }}">
 
 
-            <div class="dash-nav-dropdown  {{ request()->is('super-admin/events/mapathons') || request()->is('super-admin/events/geosparks') ? 'show' : '' }} ">
+            <div
+                class="dash-nav-dropdown  {{ request()->is('super-admin/events/mapathons') || request()->is('super-admin/events/geosparks') ? 'show' : '' }} ">
                 <a href="#"
                     class="dash-nav-dropdown-item dash-nav-dropdown-toggle {{ request()->is('super-admin/events/mapathons') || request()->is('super-admin/events/geosparks') ? 'text-primary' : 'text-light' }}">
                     <i class="far fa-dot-circle  pr-2"></i>Event posts</a>
                 <div class="dash-nav-dropdown-menu">
                     <a href="{{ route('superadmin.events.mapathons') }}"
-                        class="dash-nav-dropdown-item {{ request()->is('super-admin/events/mapathons')  ? 'bg-primary' : 'text-light' }}"><i
-                            class="{{ request()->is('super-admin/events/mapathons')  ? 'far fa-list-alt' : 'far fa-dot-circle' }} pr-2"></i>Mapathons</a>
+                        class="dash-nav-dropdown-item {{ request()->is('super-admin/events/mapathons') ? 'bg-primary' : 'text-light' }}"><i
+                            class="{{ request()->is('super-admin/events/mapathons') ? 'far fa-list-alt' : 'far fa-dot-circle' }} pr-2"></i>Mapathons</a>
                     <a href="{{ route('superadmin.events.geosparks') }}"
                         class="dash-nav-dropdown-item {{ request()->is('super-admin/events/geosparks') ? 'bg-primary' : 'text-light' }}"><i
-                            class="{{ request()->is('super-admin/events/geosparks')  ? 'far fa-list-alt' : 'far fa-dot-circle' }}  pr-2"></i>Geosparks</a>
+                            class="{{ request()->is('super-admin/events/geosparks') ? 'far fa-list-alt' : 'far fa-dot-circle' }}  pr-2"></i>Geosparks</a>
 
                 </div>
             </div>
@@ -172,20 +173,21 @@
         <div class="dash-nav-dropdown {{ $projectsActive ? 'show' : '' }}">
             <a href="#!"
                 class="dash-nav-item dash-nav-dropdown-toggle {{ $projectsActive ? 'text-primary' : 'text-light' }}">
-                <i class="fas fa-project-diagram"></i> Project Posts
+                <i class="fas fa-project-diagram"></i> Projects
             </a>
             <div class="dash-nav-dropdown-menu" style="{{ $projectsActive ? 'display: block;' : '' }}">
-                <a href="{{ route('superadmin.projects.create') }}"
-                    class="dash-nav-dropdown-item {{ request()->is('super-admin/projects/create') ? 'bg-primary' : 'text-light' }}">
-                    Add +
-                </a>
+
                 <a href="{{ route('superadmin.projects.all') }}"
                     class="dash-nav-dropdown-item  {{ request()->is('super-admin/projects') ? 'bg-primary' : 'text-light' }}">
-                    All
+                     <i
+                        class="{{ request()->is('super-admin/projects') ? 'far fa-list-alt' : 'far fa-dot-circle' }}    pr-2"></i>
+                    Project posts
                 </a>
 
                 <a href="{{ route('superadmin.projects.trashed') }}"
                     class="dash-nav-dropdown-item {{ request()->is('super-admin/projects/trashed') ? 'bg-primary' : 'text-light' }}">
+                    <i
+                        class="{{ request()->is('super-admin/projects/trashed') ? 'fas fa-trash-alt' : 'far fa-dot-circle' }}    pr-2"></i>
                     Trashed
                 </a>
             </div>

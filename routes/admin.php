@@ -79,6 +79,7 @@ Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(fun
     Route::controller(ProjectController::class)
         ->group(function () {
             Route::get('/projects', 'index')->name('superadmin.projects.all');
+            
             Route::get('/projects/create', 'create')->name('superadmin.projects.create');
             Route::post('/projects/create', 'store')->name('superadmin.projects.store');
             Route::get('/projects/{project}/show', 'show')->name('superadmin.projects.show');
