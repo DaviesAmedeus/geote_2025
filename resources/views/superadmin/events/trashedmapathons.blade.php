@@ -2,7 +2,7 @@
 
 
     <x-slot name="breadcrumb">
-        <x-panel.breadcrumb pageTitle='Trashed Mapathon Posts'>
+        <x-panel.breadcrumb pageTitle='Trashed Mapathon Posts' icon='fas fa-trash-alt'>
             <x-panel.all-items btnTitle="Mapathon Posts" href="{{ route('superadmin.events.mapathons') }}" />
 
         </x-panel.breadcrumb>
@@ -23,7 +23,6 @@
                     <th scope="col">Creator</th>
                     <th scope="col">Status</th>
                     <th scope="col">Trashed at</th>
-
                 </tr>
             </thead>
             <tbody>

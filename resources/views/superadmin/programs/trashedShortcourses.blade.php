@@ -2,7 +2,7 @@
 
 
         <x-slot name="breadcrumb">
-            <x-panel.breadcrumb pageTitle='Trashed Shortcourse Posts'>
+            <x-panel.breadcrumb pageTitle='Trashed Shortcourse Posts' icon='fas fa-trash-alt'>
                  <x-panel.all-items btnTitle="Shortcourses post"  href="{{ route('superadmin.programs.shortcourses') }}" />
             </x-panel.breadcrumb>
         </x-slot>

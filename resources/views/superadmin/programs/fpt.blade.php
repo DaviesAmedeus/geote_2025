@@ -3,7 +3,7 @@
 
 
     <x-slot name="breadcrumb">
-        <x-panel.breadcrumb pageTitle='FPT Posts'>
+        <x-panel.breadcrumb pageTitle='FPT Posts' icon='far fa-list-alt'>
             <x-panel.item-creator btnTitle="Create" :button=false href="{{ route('superadmin.programs.create') }}" />
         </x-panel.breadcrumb>
     </x-slot>

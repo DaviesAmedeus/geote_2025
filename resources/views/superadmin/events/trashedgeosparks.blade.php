@@ -2,7 +2,7 @@
 
 
     <x-slot name="breadcrumb">
-        <x-panel.breadcrumb pageTitle='Trashed Geospark Posts'>
+        <x-panel.breadcrumb pageTitle='Trashed Geospark Posts' icon='fas fa-trash-alt'>
             <x-panel.all-items btnTitle="Geosparks Posts" href="{{ route('superadmin.events.geosparks') }}" />
         </x-panel.breadcrumb>
     </x-slot>
