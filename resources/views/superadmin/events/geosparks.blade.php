@@ -31,7 +31,7 @@
                                 <img src="{{ asset('storage/' . $event->cover_image) ?? asset('assets/img/contours.jpg') }}"
                                     alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
                             </td>
-                            <th scope="row">{{ $event->title }}</th>
+                            <th scope="row">@truncate($event->title, 20)</th>
                             <th scope="row">{{ $event->subcategory->name }}</th>
                             <td scope="row">{{ $event->author->name }}</td>
                             <td>

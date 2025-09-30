@@ -32,7 +32,7 @@
                                 <img src="{{ asset('storage/' . $project->image) ?? asset('assets/img/contours.jpg') }}"
                                     alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
                             </td>
-                            <th scope="row">{{ $project->title }}</th>
+                            <th scope="row">@truncate($project->title, 20)</th>
                             <td>{{ $project->user?->name }}</td>
                             <td>{{ $project->deleted_at ? $project->deleted_at->format('F jS, Y') : '--' }}</td>
                             <td>

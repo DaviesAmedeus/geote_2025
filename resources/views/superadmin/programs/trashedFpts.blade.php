@@ -33,7 +33,7 @@
                                     <img src="{{ asset('storage/' . $trash->cover_image) ?? asset('assets/img/contours.jpg') }}"
                                         alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
                                 </td>
-                                <th scope="row">{{ $trash->title }}</th>
+                                <th scope="row">@truncate($trash->title, 20)</th>
                                 <td>{{ $trash->subcategory?->name }}</td>
                                 <td>{{ $trash->author?->name }}</td>
                                 <td>

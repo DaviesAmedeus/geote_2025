@@ -31,7 +31,7 @@
                                 <img src="{{ asset('storage/' . $program->cover_image) ?? asset('assets/img/contours.jpg') }}"
                                     alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
                             </td>
-                            <th scope="row">{{ $program->title }}</th>
+                            <th scope="row">@truncate($program->title, 20)</th>
                             <th scope="row">{{ $program->subcategory->name }}</th>
                             <td scope="row">{{ $program->author->name }}</td>
                             <td>

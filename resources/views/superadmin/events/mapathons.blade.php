@@ -24,53 +24,7 @@
             </thead>
             <tbody>
 
-                {{-- @foreach ($events as $event)
-                        <a href="/">
-                            <tr>
-                                <td>
-                                    <img src="{{ asset('storage/' . $event->cover_image) ?? asset('assets/img/contours.jpg') }}"
-                                        alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
-                                </td>
-                                <th scope="row">{{ $event->title }}</th>
-                                <th scope="row">{{ $event->subcategory->name }}</th>
-                                <td scope="row">{{ $event->author->name }}</td>
-                                <td>
-                                    @if ($event->status === 'published')
-                                        <span class="badge rounded badge-success px-3 py-1">Published</span>
-                                    @endif
-                                    @if ($event->status === 'pending')
-                                        <span class="badge rounded badge-secondary  px-3 py-1">Pending</span>
-                                    @endif
 
-                                    @if ($event->status === 'archived')
-                                        <span class="badge rounded badge-warning  px-3 py-1">Archived</span>
-                                    @endif
-                                </td>
-
-                                <td>{{ $event->created_at ? $event->created_at->format('F jS, Y') : '--' }}</td>
-
-                                <td class="">
-                                    <div class="d-flex pb-3">
-                                        <button class="btn mr-3 btn-primary view-event"
-                                            data-event-id="{{ $event->id }}" data-bs-toggle="modal"
-                                            data-bs-target="#eventModal">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <a href="{{ route('superadmin.events.edit', $event->id) }}"
-                                            class="btn btn-secondary mr-3"><i class="fas fa-pen"></i></a>
-                                        <form action="{{ route('superadmin.events.trash', $event->id) }}"
-                                            method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"><i
-                                                    class="fas fa-trash"></i></button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-
-                        </a>
-                    @endforeach --}}
 
                 @forelse ($events as $event)
                     <a href="/">
@@ -79,7 +33,7 @@
                                 <img src="{{ asset('storage/' . $event->cover_image) ?? asset('assets/img/contours.jpg') }}"
                                     alt="Icon" width="50" height="50" class="me-2 img-thumbnail">
                             </td>
-                            <th scope="row">{{ $event->title }}</th>
+                            <th scope="row">@truncate($event->title, 20)</th>
                             <th scope="row">{{ $event->subcategory->name }}</th>
                             <td scope="row">{{ $event->author->name }}</td>
                             <td>
