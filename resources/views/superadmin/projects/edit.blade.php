@@ -161,6 +161,7 @@
                                             class="btn btn-sm btn-outline-primary">Add Another</button>
                                     </div>
                                 </div>
+
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Project published Report link</label>
@@ -318,6 +319,7 @@
                 }
             });
         </script>
+        
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const fileInput = document.getElementById('cover_photo');

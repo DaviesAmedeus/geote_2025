@@ -5,6 +5,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\RegisteredUserController;
 
 // Returns views of static pages on the website
@@ -40,11 +41,19 @@ Route::controller(ProgramController::class)->group(function () {
 
 
 
-// Dont touch right for a moment let it work as it is cause there are data already in the database runing live.
 Route::controller(ProjectController::class)->group(function () {
     Route::get('/projects', 'index')->name('projects');
     Route::get('/projects/{project}/show', 'show')->name('projects.show');
 });
+
+
+Route::controller(PublicationController::class)->group(function () {
+    Route::get('/publications', 'index')->name('publications');
+    Route::get('/publications/{publication:slug}', 'show')->name('publications.show');
+});
+
+
+
 
 
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\OverViewController;
 use App\Http\Controllers\Admin\EventCategoryController;
 use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\PublicationController;
 use App\Http\Controllers\Admin\UserManagementController;
 
 Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(function () {
@@ -79,7 +80,7 @@ Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(fun
     Route::controller(ProjectController::class)
         ->group(function () {
             Route::get('/projects', 'index')->name('superadmin.projects.all');
-            
+
             Route::get('/projects/create', 'create')->name('superadmin.projects.create');
             Route::post('/projects/create', 'store')->name('superadmin.projects.store');
             Route::get('/projects/{project}/show', 'show')->name('superadmin.projects.show');
@@ -91,4 +92,7 @@ Route::middleware(['auth', 'role:superAdmin'])->prefix('super-admin')->group(fun
             Route::patch('/projects/{project}/restore', 'restore')->name('superadmin.projects.restore')->withTrashed(); //Restore trashed projects
 
         });
+
+
+       Route::resource('publications', PublicationController::class);
 });

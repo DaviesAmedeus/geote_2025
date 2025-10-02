@@ -83,9 +83,6 @@
               <i class="far fa-dot-circle  pr-2"></i> Categories
             </a> --}}
 
-
-
-
             <div class="dash-nav-dropdown  {{ $trashedActive ? 'show' : '' }}">
                 <a href="#"
                     class="dash-nav-dropdown-item dash-nav-dropdown-toggle {{ $trashedActive ? 'text-primary' : 'text-light' }}"><i
@@ -200,36 +197,18 @@
         @php
             $publicationActive = request()->is('super-admin/publication*');
         @endphp
-        <div class="dash-nav-dropdown {{ $publicationActive ? 'show' : '' }}">
-            <a href="#!"
-                class="dash-nav-item dash-nav-dropdown-toggle {{ $publicationActive ? 'text-primary' : 'text-light' }}">
-                <i class="far fa-file-alt"></i> Publications
-            </a>
-            <div class="dash-nav-dropdown-menu" style="{{ $publicationActive ? 'display: block;' : '' }}">
-                <a href="#"
-                    class="dash-nav-dropdown-item {{ request()->is('super-admin/publication/posts*') ? 'active' : '' }}">
-                    All Posts
-                </a>
-                <a href="#"
-                    class="dash-nav-dropdown-item {{ request()->is('super-admin/publication/posts*') ? 'active' : '' }}">
-                    All Posts
-                </a>
-                <a href="#"
-                    class="dash-nav-dropdown-item {{ request()->is('super-admin/publication/categories*') ? 'active' : '' }}">
-                    Categories
-                </a>
-                <a href="#"
-                    class="dash-nav-dropdown-item {{ request()->is('super-admin/publication/comments*') ? 'active' : '' }}">
-                    Comments
-                </a>
-            </div>
-        </div>
+
+
+          <a href="/super-admin/publications"
+            class="dash-nav-item {{ request()->is('super-admin/publications*') ? 'bg-primary' : 'text-light' }}">
+            <i class="far fa-file-alt"></i> Publications
+        </a>
 
         <div style="border-bottom: 1px solid #6d6d6d; margin: 10px 10px; "></div>
 
         <!-- Settings -->
         <a href="#"
-            class="dash-nav-item {{ request()->is('super-admin/settings*') ? 'text-primary' : 'text-light' }}">
+            class="dash-nav-item {{ request()->is('super-admin/settings*') ? 'bg-primary' : 'text-light' }}">
             <i class="fas fa-cog"></i> Settings
         </a>
 
