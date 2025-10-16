@@ -129,7 +129,7 @@
                                 <div class="col-xl-7 d-flex align-items-center">
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $shortcourse->title }}</h4>
-                                        <p> @truncate($shortcourse->content, 100) </p>
+                                        <p> @truncate($shortcourse->excerpt, 100) </p>
                                         <a href="{{ route('shortcourses.show', $shortcourse->slug) }}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>

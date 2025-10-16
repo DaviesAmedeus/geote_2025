@@ -103,7 +103,7 @@
                                 <div class="col-xl-7 d-flex align-items-center">
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $fpt->title }}</h4>
-                                        <p> @truncate($fpt->content, 100) </p>
+                                        <p> @truncate($fpt->excerpt, 100) </p>
                                         <a href="{{ route('fpt.show', $fpt->slug) }}" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>
