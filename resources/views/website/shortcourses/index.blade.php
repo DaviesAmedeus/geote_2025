@@ -40,15 +40,9 @@
 
                         <div class="d-flex align-items-center position-relative">
 
-                            <div class="watch-video d-flex align-items-center position-relative  me-3">
-                                <i class="bi bi-play-circle"></i>
-                                <a href="https://www.youtube.com/watch?v=dAEz64z175A"
-                                    class="glightbox stretched-link">Online Courses</a>
-                            </div>
+                            <div class="watch-video dbi bi-send-flex align-items-center position-relative">
 
-                            <div class="watch-video d-flex align-items-center position-relative">
-                                <i class="bi bi-list"></i>
-                                <a href="#" class="glightbox stretched-link">In person/Physical courses</a>
+                                <a href="https://forms.gle/gkWN8qFYgdquqKwu7" target="_blank" class="btn btn-success"><span class="text-light"><i class="bi bi-send text-light"></i>Apply here!</span></a>
                             </div>
 
 
