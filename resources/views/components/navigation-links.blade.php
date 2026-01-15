@@ -1,7 +1,7 @@
 <nav id="navbar" class="navbar">
     <ul>
-        <li><a href="{{ route('home') }}" class="active">Home</a></li>
-        <li><a href="{{ route('about') }}">About</a></li>
+        <li><a href="{{ route('home') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a></li>
+        <li><a href="{{ route('about') }}" class="{{ request()->is('/about') ? 'active' : '' }}">About</a></li>
         <li><a href="{{ route('projects') }}">Projects</a></li>
                 <li><a href="{{ route('publications') }}">Publications</a></li>
 
@@ -21,6 +21,7 @@
                 <li><a href="{{ route('shortcourses.index') }}">GIS Short course</a></li>
                 <li><a href="{{ route('mentorship') }}">GIS Mentorship</a></li>
                 <li><a href="{{ route('membership') }}">GeoTE Membership</a></li>
+                <li><a href="">Internship Progaram</a></li>
 
             </ul>
         </li>

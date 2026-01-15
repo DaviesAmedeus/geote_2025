@@ -14,6 +14,7 @@ Route::view('/about', 'website.about')->name('about');
 
 Route::view('/mentorship',  'website.mentorship')->name('mentorship');
 Route::view('/membership',  'website.membership')->name('membership');
+Route::view('/internship-program',  'website.internship')->name('internship');
 Route::view('/donate',  'website.donate')->name('donate');
 
 
