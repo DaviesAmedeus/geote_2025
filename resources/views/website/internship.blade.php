@@ -251,7 +251,7 @@
                     </ul>
 
                     <div class="services-list">
-                        <p>Send your CV and cover letter for this application via <strong>applications@geote.or </strong>before <strong>Jan 25, 2026</strong></p>
+                        <p>Send your CV and cover letter for this application via <strong>applications@geote.org </strong>before <strong>Jan 25, 2026</strong></p>
                     </div>
 
                     <p><strong>NOTE:</strong>This application is for people based in Morogoro Municipal</p>
