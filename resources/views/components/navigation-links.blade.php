@@ -21,7 +21,7 @@
                 <li><a href="{{ route('shortcourses.index') }}">GIS Short course</a></li>
                 <li><a href="{{ route('mentorship') }}">GIS Mentorship</a></li>
                 <li><a href="{{ route('membership') }}">GeoTE Membership</a></li>
-                <li><a href="">Internship Progaram</a></li>
+                <li><a href="{{ route('internship') }}">Internship Progaram</a></li>
 
             </ul>
         </li>
