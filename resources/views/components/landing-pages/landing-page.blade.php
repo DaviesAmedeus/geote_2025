@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
-          <h2 data-aos="fade-down"><strong>GEOSPATIAL TECHNOLOGY & ENVRIONMENT</strong></h2>
+          <h2 data-aos="fade-down"><strong>GEOSPATIAL TECHNOLOGY & ENVIRONMENT</strong></h2>
           <h4 data-aos="fade-up" class="text-warning">“Map, Innovate, Impact”</h4>
         </div>
       </div>

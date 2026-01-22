@@ -73,6 +73,35 @@
             </div>
         </section><!-- End Alt Services Section -->
 
+
+        <div class="container" data-aos="fade-up">
+
+            <div class="row position-relative">
+
+                <div class="col-lg-7 about-img"
+                    style="background-image: url({{ asset('assets/img/website/strategic-plan-2022-2027.png') }});"></div>
+
+                <div class="col-lg-7">
+                    <div class="our-story">
+                        <h4>2022 - 2027</h4>
+                        <h3>Our Strategic Plan </h3>
+                        <p>We are pleased to present the first Strategic Plan of GeoTE (Geospatial Technology and
+Environment), a Non-Governmental Organization (NGO) registered in 2022 to advance
+sustainable development through geospatial technologies and community-driven innovation.</p>
+<p></p>
+
+
+                        <div class="watch-video d-flex align-items-center position-relative">
+                            <i class="bi bi-download"></i>
+                            <a href="https://drive.google.com/file/d/1LMvm3foMYHe0tjpLPiemhpd0_Eq2X3_h/view?usp=sharing" target="_blank" class="">Download</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
     <!-- End About Section -->
 
