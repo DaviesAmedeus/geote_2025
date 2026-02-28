@@ -30,7 +30,6 @@ public function execute(Request $request): bool
             $attr['category_id'] = 2; //2 is the category_id for programs
             $attr['author_id'] = Auth::user()->id;
 
-
             // dd($attr);
 
             // Then handle the image upload if present
