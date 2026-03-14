@@ -33,12 +33,16 @@
                             flexibility
                             we are ready to engage with you. </p>
 
+                            <p>Interested to be mentored?</p>
+
                         <div class="watch-video d-flex align-items-center position-relative  me-3">
-                            <i class="bi bi-person"></i>
-                            <a href="https://docs.google.com/forms/d/1fXV92v-qlGLlY6saHdVHkZZZIhWNajXEzAUFJOo4X74/edit"
-                                target="_blank">
-                                Interested to be mentored?</a>
+
+
+                                                                <a href="https://docs.google.com/forms/d/1fXV92v-qlGLlY6saHdVHkZZZIhWNajXEzAUFJOo4X74/edit" target="_blank" class="btn btn-outline-success"><span class="text-light"><i class="bi bi-send text-light"></i>Apply here!</span></a>
+
                         </div>
+
+
                     </div>
                 </div>
 
