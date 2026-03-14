@@ -86,7 +86,8 @@
                     <div class="our-story">
                         <h4>2022 - 2027</h4>
                         <h3>Our Strategic Plan </h3>
-                        <p class="py-5">We are pleased to present the first Strategic Plan of GeoTE (Geospatial Technology and
+                        <p class="py-5">We are pleased to present the first Strategic Plan of GeoTE (Geospatial
+                            Technology and
                             Environment). This plan outlines our commitment to bridging data gaps, strengthening local
                             capacity, and empowering communities to address environmental and development challenges
                             with inclusive, evidence-based solutions.</p>
@@ -122,23 +123,14 @@
                         <div class="icon">
                             <i class="fa-solid fa-mountain-city"></i>
                         </div>
-                        <h3>Training and capacity building</h3>
-                        <p>Accelerating the impact of the data collected on community field and remote
-                            mapping, GeoTE trains data users and consumers on the correct and right way to
-                            use and create more impact with the data made available for decision making,
-                            knowledge generation, and communications.</p>
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-item position-relative">
-                        <div class="icon">
-                            <i class="fa-solid fa-arrow-up-from-ground-water"></i>
-                        </div>
-                        <h3>Community sensitization</h3>
-                        <p>Working with a range of stakeholders, GeoTE successfully develops and improves
-                            awareness among its stakeholders in matters that contribute to the growth of the
-                            community in terms of professions, strategies, and prosperity.</p>
+                        <h3>Capacity Building</h3>
+                        <p>Capacity Building is at the core of GeoTE’s mission, with a deliberate focus on empowering
+                            youth and early-career professionals within institutions and communities. GeoTE strengthens
+                            geospatial knowledge and technical skills
+                            through geospatial programs such as Field practical training, GIS mentorship, GIS short
+                            courses and workshops. Our programs priorities applied learning that enables young people
+                            and emerging professionals to confidently use geospatial technologies in real-world
+                            contexts, from community mapping to institutional decision-making.</p>
                     </div>
                 </div><!-- End Service Item -->
 
@@ -148,11 +140,34 @@
                             <i class="fa-solid fa-compass-drafting"></i>
                         </div>
                         <h3>Community Mapping</h3>
-                        <p>GeoTE works more closely with the community in gathering community data useful
-                            for decision-making and knowledge generation. We support communities by training
-                            and engaging community data collection through participatory community mapping.</p>
+                        <p>Community Mapping focuses on the collection, improvement, and validation of geospatial data
+                            through participatory approaches. GeoTE works with youth, academic institutions, the
+                            government and local communities, to map critical infrastructure, services, and
+                            environmental features, particularly in underserved and data-scarce areas. This approach
+                            ensures that local knowledge is captured, communities are made visible on maps, and open
+                            geospatial data is available to support development agendas such as planning, service
+                            delivery, and disaster risk management.</p>
                     </div>
                 </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="fa-solid fa-arrow-up-from-ground-water"></i>
+                        </div>
+                        <h3>Community sensitization</h3>
+                        <p>Community sensitization aims to advance geospatial advocacy by building awareness, trust, and
+                            understanding of geospatial technologies among decision-makers, communities, and
+                            stakeholders across multiple sectors. Through dialogue, outreach, and engagement, GeoTE
+                            promotes the adoption of open data, participatory mapping, and geospatial innovation in
+                            sectors beyond the traditional geospatial domain. These efforts encourage evidence-based,
+                            data-driven decision-making while highlighting the cross-cutting value of geospatial
+                            technologies. Community sensitization fosters ownership, inclusive participation, and the
+                            responsible and ethical use of geospatial information in development processes.</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-item position-relative">
