@@ -78,5 +78,5 @@ require __DIR__.'/admin.php';
 require __DIR__.'/staff.php';
 
 // fallback
-Route::fallback(fn() => view('website.about'));
+// Route::fallback(fn() => view('website.about'));
 
