@@ -8,6 +8,9 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\RegisteredUserController;
 
+
+Route::view('/lcoy2026tz',  'website.locoy2026tz');
+
 // Returns views of static pages on the website
 Route::view('/',  'website.index')->name('home');
 Route::view('/about', 'website.about')->name('about');
