@@ -85,10 +85,10 @@
                             <h2>GeoTE</h2>
                             </div>
                             <p>
-                                P.0 BOX 92, Sinai Street<br>
-                                Kanadian Road<br>
+                                P.0 BOX 92<br>
                                 Morogoro, Tanzania<br><br>
 
+                                <strong>Charity ID:</strong> ooNGO/R/3888<br>
                                 <strong>Phone:</strong> +255 762 780 170<br>
                                 <strong>Email:</strong> info@geote.org<br>
                             </p>
@@ -115,8 +115,7 @@
                             <li><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="{{ route('about') }}">About</a></li>
                             <li><a href="{{ route('projects') }}">Projects</a></li>
-                            {{-- <li><a href="#">Blog</a></li> --}}
-                            {{-- <li><a href="#">Publications</a></li> --}}
+
                         </ul>
                     </div><!-- End footer links column-->
 

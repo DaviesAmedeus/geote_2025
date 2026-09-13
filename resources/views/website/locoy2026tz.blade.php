@@ -153,8 +153,8 @@
                 Event Venue
             </p>
 
-            <a href="#" class="btn btn-success btn-lg px-5">
-                Register Now
+            <a href="#" class="btn btn-success btn-lg px-5" >
+                Registration Opening Soon...
             </a>
 
         </div>
