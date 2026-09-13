@@ -90,6 +90,7 @@
                                 Morogoro, Tanzania<br><br>
 
                                 <strong>Charity ID:</strong> ooNGO/R/3888<br>
+                                 <strong>Registration Date:</strong> October 17, 2022<br><br>
                                 <strong>Phone:</strong> +255 762 780 170<br>
                                 <strong>Email:</strong> info@geote.org<br>
                             </p>
