@@ -85,6 +85,7 @@
                             <h2>GeoTE</h2>
                             </div>
                             <p>
+                               Geospatial Technology and Environment<br>
                                 P.0 BOX 92<br>
                                 Morogoro, Tanzania<br><br>
 
