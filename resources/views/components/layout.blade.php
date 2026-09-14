@@ -86,7 +86,9 @@
                             </div>
                             <p>
                                Geospatial Technology and Environment<br>
-                                P.0 BOX 92<br>
+                                P.O BOX 92<br>
+                                Plot No. 117/MD<br>
+                                Sinai Street, Forest Hill<br>
                                 Morogoro, Tanzania<br><br>
 
                                 <strong>Charity ID:</strong> ooNGO/R/3888<br>
