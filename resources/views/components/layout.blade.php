@@ -86,7 +86,6 @@
                             </div>
                             <p>
                                Geospatial Technology and Environment<br>
-                                P.O BOX 92<br>
                                 Plot No. 117/MD<br>
                                 Sinai Street, Forest Hill<br>
                                 Morogoro, Tanzania<br><br>
