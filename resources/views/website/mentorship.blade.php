@@ -36,9 +36,7 @@
                             <p>Interested to be mentored?</p>
 
                         <div class="watch-video d-flex align-items-center position-relative  me-3">
-
-
-                                                                <a href="https://docs.google.com/forms/d/1fXV92v-qlGLlY6saHdVHkZZZIhWNajXEzAUFJOo4X74/edit" target="_blank" class="btn btn-outline-success"><span class="text-light"><i class="bi bi-send text-light"></i>Apply here!</span></a>
+                            <a href="https://forms.gle/9fczyEjNSLzAunVS6" target="_blank" class="btn btn-outline-success"><span class="text-light"><i class="bi bi-send text-light"></i>Apply here!</span></a>
 
                         </div>
 

@@ -30,7 +30,7 @@
 
                         <div class="watch-video d-flex align-items-center position-relative  me-3">
                             <i class="bi bi-person"></i>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3QwwljcAQi3kpCIogMkHdHMvMNCtcISOvAab8IfSRy0mwCA/viewform?usp=header"
+                            <a href="https://forms.gle/3X9NFDjWxMhHof8E6"
                                 target="_blank">
                                 Interested to become a member? (click here)</a>
                         </div>

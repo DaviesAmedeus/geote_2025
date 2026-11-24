@@ -42,7 +42,7 @@
 
                             <div class="watch-video dbi bi-send-flex align-items-center position-relative">
 
-                                <a href="https://forms.gle/gkWN8qFYgdquqKwu7" target="_blank" class="btn btn-success"><span class="text-light"><i class="bi bi-send text-light"></i>Apply here!</span></a>
+                                <a href="https://forms.gle/YMBBjxw646jwPwUs9" target="_blank" class="btn btn-success"><span class="text-light"><i class="bi bi-send text-light"></i>Apply here!</span></a>
                             </div>
 
 
